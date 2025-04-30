@@ -26,7 +26,27 @@ main{
 }
 
 section{
-    margin-bottom: 30px;
+    margin: auto;
+    margin-bottom: 25px;
+    background-color: #1f2b6b;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+section video{
+    border-radius: 10px;
+}
+
+section p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 150%;
+}
+
+.mouse-icon{
+    width: 30px;
+    transform: translateY(14px);
 }
 
 #main-container{
@@ -100,6 +120,15 @@ section{
     padding: 6px 12px;
     border-top: none;
     animation: fadeEffect 1s;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.lineup-title{
+    margin-bottom: 25px;
+    font-size: 200%;
+    font-weight: bolder;
+    padding-left: 5,px;
 }
   
 @keyframes fadeEffect {
