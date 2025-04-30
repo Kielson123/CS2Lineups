@@ -1,0 +1,52 @@
+.tab-buttons {
+    display: flex;
+    overflow: hidden;
+    background-color: #1f2b6b;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.tab-buttons button {
+    font-size: larger;
+    color: aliceblue;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 25%;
+}
+  
+.tab-buttons button:hover {
+    background-color: #384589;
+}
+
+.tab-buttons button.active {
+    background-color: #29377B;
+    cursor: auto;
+}
+
+.tab-content {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    animation: fadeEffect 1s;
+}
+  
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#map-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section{
+    margin-bottom: 30px;
+}

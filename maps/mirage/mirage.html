@@ -1,0 +1,50 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/maps/map.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 id="map-title">Mirage</h1>
+        <div class="tab-buttons">
+            <button class="tab-links" onclick="openTab(event, 'Bombsite-A')" id="defaultOpen">Bombsite A</button>
+            <button class="tab-links" onclick="openTab(event, 'Mid')">Mid</button>
+            <button class="tab-links" onclick="openTab(event, 'Bombsite-B')">Bombsite B</button>
+            <button class="tab-links" onclick="openTab(event, 'Others')">Inne</button>
+        </div>
+        <br>
+
+        <div id="Bombsite-A" class="tab-content">
+            <section>
+                <h1>Bombsite A</h1>
+            </section>
+        </div>
+
+        <div id="Mid" class="tab-content">
+            <section include-lineup="/maps/mirage/lineups/mid/t-spawn_2_window.html">
+            </section>
+        </div>
+
+        <div id="Bombsite-B" class="tab-content">
+            <section>
+                <h1>Bombsite B</h1>
+            </section>
+        </div>
+
+        <div id="Others" class="tab-content">
+            <section>
+                <h1>Inne</h1>
+            </section>
+        </div>
+    </main>
+
+    <script src="/main.js"></script>
+    <script>
+        addLineups()
+    </script>
+    <script src="/maps/map.js"></script>
+</body>
+</html>
