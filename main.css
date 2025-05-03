@@ -12,7 +12,6 @@ html{
 body{
     color: aliceblue;
     background-color: #000626;
-    padding: 15px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -21,8 +20,6 @@ main{
     color: aliceblue;
     width: 100%;
     padding: 35px;
-    margin-top: 10px;
-    border-radius: 15px;
 }
 
 section{
@@ -76,8 +73,8 @@ section p{
 #main-header{
     text-align: center;
     background-color:#0D1951;
-    border-radius: 15px;
     padding: 10px;
+    padding-top: 20px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -117,7 +114,6 @@ section p{
 
 .tab-content {
     display: none;
-    padding: 6px 12px;
     border-top: none;
     animation: fadeEffect 1s;
     flex-direction: row;
