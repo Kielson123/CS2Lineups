@@ -1,46 +1,121 @@
-//http-server -c1 -p80
+let currentExpanded = null;
 
-function addLineups() {
-    let tags = document.getElementsByTagName("*")
-    for (let i = 0; i < tags.length; i++) {
-        let elmnt = tags[i] 
-        let file = elmnt.getAttribute("include-lineup")
-        if (file) {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        elmnt.innerHTML = this.responseText;
-                    }
-                    if (this.status == 404) {
-                        elmnt.innerHTML = "Page not found.";
-                    }
-                    
-                    elmnt.removeAttribute("include-lineup");
-                    addLineups();
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-
-            return;
-        }
-    }
-}
 
 function openTab(event, tabName) {
-    let tabcontent = document.getElementsByClassName("tab-content");
+    const tabcontent = document.getElementsByClassName("tab-content");
     for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("visible");
     }
-  
-    let tablinks = document.getElementsByClassName("tab-links");
+    const tablinks = document.getElementsByClassName("tab-links");
     for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].classList.remove("active");
     }
-  
-    document.getElementById(tabName).style.display = "flex";
-    event.currentTarget.className += " active";
+
+    document.getElementById(tabName).classList.add("visible");
+    event.currentTarget.classList.add("active");
 }
 
-document.getElementById("defaultOpen").click();
+
+async function loadLineups() {
+    const map = document.body.dataset.map;
+    if (!map) {
+        console.error("Nie podano mapy w data-map");
+        return;
+    }
+
+    try {
+        const response = await fetch(`./data/${map}.json`);
+        if (!response.ok) {
+            throw new Error("Nie znaleziono pliku JSON");
+        }
+        const data = await response.json();
+
+        generateSection("Bombsite-A", data["Bombsite-A"]);
+        generateSection("Mid", data["Mid"]);
+        generateSection("Bombsite-B", data["Bombsite-B"]);
+        generateSection("Others", data["Others"]);
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+
+function generateSection(sectionName, lineups) {
+    const container = document.querySelector(
+        `#${sectionName} .lineup-container`
+    );
+    if (!container || !lineups) {
+        return;
+    }
+
+    container.innerHTML = "";
+    lineups.forEach(lineup => {
+        const card = document.createElement("div");
+        card.className = 
+            `lineup-card ${lineup.grenade}`;
+        card.innerHTML = `
+            <div class="lineup-preview">
+                <img 
+                    src="${lineup.preview}"
+                    alt="${lineup.title}"
+                >
+                <h2>${lineup.title}</h2>
+            </div>
+            <div class="lineup-details">
+                <img 
+                    src="${lineup.place}"
+                    alt="${lineup.title}"
+                >
+                <img 
+                    src="${lineup.aim}"
+                    alt="${lineup.title}"
+                >
+                <p>${lineup.instructions}</p>
+            </div>
+        `;
+
+        card.addEventListener(
+            "click",
+            () => expandLineup(card)
+        );
+        container.appendChild(card);
+    });
+}
+
+
+function expandLineup(card) {
+    if (currentExpanded === card) {
+        card.classList.remove("expanded");
+        currentExpanded = null;
+        return;
+    }
+
+    document
+        .querySelectorAll(".lineup-card.expanded")
+        .forEach(item => {
+            item.classList.remove("expanded");
+        });
+
+    card.classList.add("expanded");
+    currentExpanded = card;
+
+    setTimeout(()=>{
+        card.scrollIntoView({
+            behavior:"smooth",
+            block:"end"
+        });
+    },350);
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+        loadLineups();
+        const defaultTab =
+            document.getElementById("defaultOpen");
+        if(defaultTab){
+            defaultTab.click();
+        }
+    }
+);

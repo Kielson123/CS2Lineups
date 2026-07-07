@@ -1,0 +1,13 @@
+{
+    "Mid": [
+        {
+            "id": "window",
+            "title": "Window",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "place": "./images/mirage/t_window_place.png",
+            "aim": "./images/mirage/t_window_aim.png",
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        }
+    ]
+}
