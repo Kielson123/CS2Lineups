@@ -51,33 +51,18 @@ function generateSection(sectionName, lineups) {
     container.innerHTML = "";
     lineups.forEach(lineup => {
         const card = document.createElement("div");
-        card.className = 
-            `lineup-card ${lineup.grenade}`;
-        card.innerHTML = `
+        card.className = `lineup-card ${lineup.grenade}`;
+        let content = `
             <div class="lineup-preview">
-                <img 
-                    src="${lineup.preview}"
-                    alt="${lineup.title}"
-                >
+                <img src="${lineup.preview}" alt="${lineup.title}">
                 <h2>${lineup.title}</h2>
             </div>
-            <div class="lineup-details">
-                <img 
-                    src="${lineup.place}"
-                    alt="${lineup.title}"
-                >
-                <img 
-                    src="${lineup.aim}"
-                    alt="${lineup.title}"
-                >
-                <p>${lineup.instructions}</p>
-            </div>
-        `;
+            <div class="lineup-details"><center>`;
+        lineup.images.forEach(image => content += `<img src="${image}" alt="${lineup.title}">`)
+        content += `</center><p>${lineup.instructions}</p></div>`;
+        card.innerHTML = content;
 
-        card.addEventListener(
-            "click",
-            () => expandLineup(card)
-        );
+        card.addEventListener("click", () => expandLineup(card));
         container.appendChild(card);
     });
 }

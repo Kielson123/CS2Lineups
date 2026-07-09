@@ -1,13 +1,138 @@
 {
+    "Bombsite-A": [
+        {
+            "id": "jungle",
+            "title": "Jungle",
+            "grenade": "smoke",
+            "preview": "./images/mirage/ramp_jungle.png",
+            "images": [
+                "./images/mirage/ramp_jungle (1).png", 
+                "./images/mirage/ramp_jungle (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        },
+        {
+            "id": "stairs",
+            "title": "Stairs",
+            "grenade": "smoke",
+            "preview": "./images/mirage/ramp_stairs.png",
+            "images": [
+                "./images/mirage/ramp_stairs (1).png", 
+                "./images/mirage/ramp_stairs (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        },
+        {
+            "id": "ticket",
+            "title": "Ticket",
+            "grenade": "smoke",
+            "preview": "./images/mirage/ramp_ticket.png",
+            "images": [
+                "./images/mirage/ramp_ticket (1).png", 
+                "./images/mirage/ramp_ticket (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        }
+    ],
     "Mid": [
         {
             "id": "window",
             "title": "Window",
             "grenade": "smoke",
             "preview": "./images/mirage/t_window.png",
-            "place": "./images/mirage/t_window_place.png",
-            "aim": "./images/mirage/t_window_aim.png",
+            "images": [
+                "./images/mirage/t_window (1).png", 
+                "./images/mirage/t_window (2).png"
+            ],
             "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        },
+        {
+            "id": "connector",
+            "title": "Connector",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_con.png",
+            "images": [
+                "./images/mirage/t_con (1).png", 
+                "./images/mirage/t_con (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        },
+        {
+            "id": "short",
+            "title": "Short",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_short.png",
+            "images": [
+                "./images/mirage/t_short (1).png", 
+                "./images/mirage/t_short (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + skok"
+        },
+        {
+            "id": "top_mid",
+            "title": "Top Mid",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_top_mid.png",
+            "images": [
+                "./images/mirage/t_top_mid (1).png", 
+                "./images/mirage/t_top_mid (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\">"
+        },
+        {
+            "id": "instant_window_1",
+            "title": "Instant Window #1",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "images": [
+                "./images/mirage/t_window_instant_1 (1).png",
+                "./images/mirage/t_window_instant_1 (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + 'W' + skok"
+        },
+        {
+            "id": "instant_window_2",
+            "title": "Instant Window #2",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "images": [
+                "./images/mirage/t_window_instant_2 (1).png",
+                "./images/mirage/t_window_instant_2 (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + 'W' + skok"
+        },
+        {
+            "id": "instant_window_3",
+            "title": "Instant Window #3",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "images": [
+                "./images/mirage/t_window_instant_3 (1).png",
+                "./images/mirage/t_window_instant_3 (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + 'W' + skok"
+        },
+        {
+            "id": "instant_window_4",
+            "title": "Instant Window #4",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "images": [
+                "./images/mirage/t_window_instant_4 (1).png",
+                "./images/mirage/t_window_instant_4 (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + 'W' + skok"
+        },
+        {
+            "id": "instant_window_5",
+            "title": "Instant Window #5",
+            "grenade": "smoke",
+            "preview": "./images/mirage/t_window.png",
+            "images": [
+                "./images/mirage/t_window_instant_5 (1).png",
+                "./images/mirage/t_window_instant_5 (2).png"
+            ],
+            "instructions": "<img src=\"../icons/left-click.png\" class=\"mouse-icon\"> + 'W' + skok"
         }
     ]
 }

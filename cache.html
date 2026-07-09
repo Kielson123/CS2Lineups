@@ -1,0 +1,42 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Kielson's CS2 Lineups</title>
+</head>
+<body data-map="cache">
+    <main>
+        <h1 id="map-title">Cache</h1>
+        <div class="tab-buttons">
+            <button class="tab-links" onclick="openTab(event, 'Bombsite-A')" id="defaultOpen">Bombsite A</button>
+            <button class="tab-links" onclick="openTab(event, 'Mid')">Mid</button>
+            <button class="tab-links" onclick="openTab(event, 'Bombsite-B')">Bombsite B</button>
+        </div>
+        <br>
+
+        <div id="Bombsite-A" class="tab-content">
+            <section class="lineup-container">
+
+            </section>
+        </div>
+
+        <div id="Mid" class="tab-content">
+            <section class="lineup-container">
+
+            </section>
+        </div>
+
+        <div id="Bombsite-B" class="tab-content">
+            <section class="lineup-container">
+
+            </section>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+    <script>
+        addLineups()
+    </script>
+</body>
+</html>

@@ -155,8 +155,9 @@ section {
 }
 
 .lineup-details img {
-    max-height:664px;
+    max-height:650px;
     border-radius:10px;
+    margin: 12px;
 }
 
 .lineup-details p {
