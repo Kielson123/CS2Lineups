@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Lineups</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="nav-back">← Wszystkie mapy</a>
+            <h1 class="brand-title" id="header-map-title">CS2 Lineups</h1>
+            <div style="width: 140px;"></div> <!-- Spacer for center alignment -->
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Side Selector (T / CT) -->
+        <div class="side-selector" id="side-selector">
+            <button class="side-btn t-btn active" data-side="t" id="btn-t-side">
+                <span class="side-icon">⚔️</span>
+                <span class="side-name">Terrorists (T)</span>
+                <span class="side-count" id="t-count">0</span>
+            </button>
+            <button class="side-btn ct-btn" data-side="ct" id="btn-ct-side">
+                <span class="side-icon">🛡️</span>
+                <span class="side-name">Counter-Terrorists (CT)</span>
+                <span class="side-count" id="ct-count">0</span>
+            </button>
+        </div>
+
+        <div id="map-content">
+            <nav class="tab-buttons" id="tab-buttons" aria-label="Wybór bombsite'u"></nav>
+            <div id="tabs-container"></div>
+        </div>
+    </main>
+
+    <script src="./assets/js/map.js"></script>
+</body>
+</html>

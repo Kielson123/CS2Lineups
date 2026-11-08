@@ -1,0 +1,18 @@
+{
+  "Bombsite-B": [
+    {
+      "id": "long",
+      "title": "Long",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_long_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/doors.webp",
+        "./assets/images/lineups/ancient/s_long_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      }
+    }
+  ]
+}

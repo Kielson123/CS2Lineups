@@ -1,53 +1,122 @@
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" author="Kielson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kielson's CS2 Lineups</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <main id="main-container">
-        <a href="./ancient.html" class="map-container">
-            <h2 class="map-name">ANCIENT</h2>
-            <img class="map-image" src="./images/ancient.png" alt="Ancient">
-        </a>
-        <a href="./anubis.html" class="map-container">
-            <h2 class="map-name">ANUBIS</h2>
-            <img class="map-image" src="./images/anubis.png" alt="Anubis">
-        </a>
-        <a href="./cache.html" class="map-container">
-            <h2 class="map-name">CACHE</h2>
-            <img class="map-image" src="./images/cache.png" alt="Cache">
-        </a>
-        <a href="./dust2.html" class="map-container">
-            <h2 class="map-name">DUST II</h2>
-            <img class="map-image" src="./images/dust2.png" alt="Dust II">
-        </a>
-        <a href="./inferno.html" class="map-container">
-            <h2 class="map-name">INFERNO</h2>
-            <img class="map-image" src="./images/inferno.png" alt="Inferno">
-        </a>
-        <a href="./mirage.html" class="map-container">
-            <h2 class="map-name">MIRAGE</h2>
-            <img class="map-image" src="./images/mirage.png" alt="Mirage">
-        </a>
-        <a href="./nuke.html" class="map-container">
-            <h2 class="map-name">NUKE</h2>
-            <img class="map-image" src="./images/nuke.png" alt="Nuke">
-        </a>
-        <a href="./overpass.html" class="map-container">
-            <h2 class="map-name">OVERPASS</h2>
-            <img class="map-image" src="./images/overpass.png" alt="Overpass">
-        </a>
-        <a href="./train.html" class="map-container">
-            <h2 class="map-name">TRAIN</h2>
-            <img class="map-image" src="./images/train.png" alt="Train">
-        </a>
-        <a href="./vertigo.html" class="map-container">
-            <h2 class="map-name">VERTIGO</h2>
-            <img class="map-image" src="./images/vertigo.png" alt="Veritgo">
-        </a>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="./index.html" class="brand-title">
+                Kielson's <span>CS2 Lineups</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="maps-grid" id="maps-grid">
+            <a href="./map.html?map=ancient" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/ancient.webp" alt="Ancient" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Ancient</h2>
+                    <span class="map-badge">1 lineup</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=anubis" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/anubis.webp" alt="Anubis" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Anubis</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=cache" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/cache.webp" alt="Cache" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Cache</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=dust2" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/dust2.webp" alt="Dust II" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Dust II</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=inferno" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/inferno.webp" alt="Inferno" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Inferno</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=mirage" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/mirage.webp" alt="Mirage" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Mirage</h2>
+                    <span class="map-badge">12 lineupów</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=nuke" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/nuke.webp" alt="Nuke" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Nuke</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=overpass" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/overpass.webp" alt="Overpass" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Overpass</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=train" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/train.webp" alt="Train" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Train</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+
+            <a href="./map.html?map=vertigo" class="map-card">
+                <div class="map-card-img-wrapper">
+                    <img class="map-card-img" src="./assets/images/maps/vertigo.webp" alt="Vertigo" loading="lazy">
+                </div>
+                <div class="map-card-info">
+                    <h2 class="map-card-title">Vertigo</h2>
+                    <span class="map-badge empty">Wkrótce</span>
+                </div>
+            </a>
+        </section>
     </main>
-    <script src="./main.js"></script>
 </body>
 </html>

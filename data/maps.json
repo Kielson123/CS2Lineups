@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ancient",
+    "name": "Ancient",
+    "image": "./assets/images/maps/ancient.webp",
+    "hasData": true
+  },
+  {
+    "id": "anubis",
+    "name": "Anubis",
+    "image": "./assets/images/maps/anubis.webp",
+    "hasData": false
+  },
+  {
+    "id": "cache",
+    "name": "Cache",
+    "image": "./assets/images/maps/cache.webp",
+    "hasData": false
+  },
+  {
+    "id": "dust2",
+    "name": "Dust II",
+    "image": "./assets/images/maps/dust2.webp",
+    "hasData": false
+  },
+  {
+    "id": "inferno",
+    "name": "Inferno",
+    "image": "./assets/images/maps/inferno.webp",
+    "hasData": false
+  },
+  {
+    "id": "mirage",
+    "name": "Mirage",
+    "image": "./assets/images/maps/mirage.webp",
+    "hasData": true
+  },
+  {
+    "id": "nuke",
+    "name": "Nuke",
+    "image": "./assets/images/maps/nuke.webp",
+    "hasData": false
+  },
+  {
+    "id": "overpass",
+    "name": "Overpass",
+    "image": "./assets/images/maps/overpass.webp",
+    "hasData": false
+  },
+  {
+    "id": "train",
+    "name": "Train",
+    "image": "./assets/images/maps/train.webp",
+    "hasData": false
+  },
+  {
+    "id": "vertigo",
+    "name": "Vertigo",
+    "image": "./assets/images/maps/vertigo.webp",
+    "hasData": false
+  }
+]
