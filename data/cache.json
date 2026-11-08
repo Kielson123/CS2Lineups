@@ -1,0 +1,175 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "Wózek",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_wozek_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/drzwi_1.webp",
+        "./assets/images/lineups/cache/s_wozek_1.webp"
+      ],
+      "throw": {
+        "mouse": "both-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site A",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_site_a_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/drzwi_1.webp",
+        "./assets/images/lineups/cache/s_site_a_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Main A",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_main_a_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/ct_1.webp",
+        "./assets/images/lineups/cache/s_main_a_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    }
+  ],
+  "Mid": [
+    {
+      "title": "Highway",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_highway_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/t_spawn_1.webp",
+        "./assets/images/lineups/cache/s_highway_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Connector",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_connector_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/t_spawn_2.webp",
+        "./assets/images/lineups/cache/s_connector_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Sandbagi",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/cache/m_sandbagi_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/mid_1.webp",
+        "./assets/images/lineups/cache/m_sandbagi_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Boost",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/cache/m_boost_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/mid_2.webp",
+        "./assets/images/lineups/cache/m_boost_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    }
+  ],
+  "Bombsite-B": [
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/bmain_1.webp",
+        "./assets/images/lineups/cache/s_ct_1.webp"
+      ],
+      "throw": {
+        "mouse": "both-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Heaven",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/cache/s_heaven_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/bmain_1.webp",
+        "./assets/images/lineups/cache/s_heaven_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "S"
+        ],
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/cache/m_site_b_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/bmain_1.webp",
+        "./assets/images/lineups/cache/m_site_b_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/cache/m_site_b_2.webp",
+      "images": [
+        "./assets/images/lineups/cache/bmain_1.webp",
+        "./assets/images/lineups/cache/m_site_b_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Headshot",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/cache/m_headshot_0.webp",
+      "images": [
+        "./assets/images/lineups/cache/bmain_2.webp",
+        "./assets/images/lineups/cache/m_headshot_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ]
+}

@@ -76,7 +76,7 @@ function renderEmptyState(mapName) {
             <h3>Brak lineupów dla mapy ${mapName}</h3>
             <p>Lineupy dla tej mapy są w przygotowaniu i pojawią się wkrótce!</p>
             <br>
-            <a href="./map.html?map=mirage" class="nav-back">Zobacz Mirage</a>
+            <a href="./map.html?map=ancient" class="nav-back">Zobacz Ancient</a>
         </div>
     `;
 }

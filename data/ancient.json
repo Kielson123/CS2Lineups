@@ -1,12 +1,12 @@
 {
-  "Bombsite-B": [
+  "Bombsite-A": [
     {
-      "title": "Long",
+      "title": "CT",
       "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_long_0.webp",
+      "preview": "./assets/images/lineups/ancient/s_ct_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/brama_1.webp",
-        "./assets/images/lineups/ancient/s_long_1.webp"
+        "./assets/images/lineups/ancient/amain_1.webp",
+        "./assets/images/lineups/ancient/s_ct_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
@@ -15,12 +15,12 @@
       "side": "t"
     },
     {
-      "title": "Short",
+      "title": "Rondo",
       "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_short_0.webp",
+      "preview": "./assets/images/lineups/ancient/s_rondo_2.webp",
       "images": [
-        "./assets/images/lineups/ancient/brama_1.webp",
-        "./assets/images/lineups/ancient/s_short_1.webp"
+        "./assets/images/lineups/ancient/amain_1.webp",
+        "./assets/images/lineups/ancient/s_rondo_3.webp"
       ],
       "throw": {
         "mouse": "left-click",
@@ -29,121 +29,42 @@
       "side": "t"
     },
     {
-      "title": "Cave",
-      "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_cave_0.webp",
-      "images": [
-        "./assets/images/lineups/ancient/brama_1.webp",
-        "./assets/images/lineups/ancient/s_cave_1.webp"
-      ],
-      "throw": {
-        "mouse": "left-click",
-        "action": "jump"
-      },
-      "side": "t"
-    },
-    {
-      "title": "Wnęka",
+      "title": "Site A",
       "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_wneka_0.webp",
+      "preview": "./assets/images/lineups/ancient/m_a_site_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/brama_1.webp",
-        "./assets/images/lineups/ancient/m_wneka_1.webp"
+        "./assets/images/lineups/ancient/amain_2.webp",
+        "./assets/images/lineups/ancient/m_a_site_1.webp"
       ],
       "throw": {
-        "mouse": "left-click",
-        "action": "jump"
+        "mouse": "left-click"
       },
       "side": "t"
     },
     {
-      "title": "Filar",
-      "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_filar_0.webp",
-      "images": [
-        "./assets/images/lineups/ancient/brama_1.webp",
-        "./assets/images/lineups/ancient/m_filar_1.webp"
-      ],
-      "throw": {
-        "mouse": "left-click",
-        "keys": [
-          "Shift",
-          "W"
-        ],
-        "action": "jump"
-      },
-      "side": "t"
-    },
-    {
-      "title": "B Site",
+      "title": "Site A",
       "grenade": "flash",
-      "preview": "./assets/images/lineups/ancient/f_bsite_0.webp",
+      "preview": "./assets/images/lineups/ancient/f_a_site_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/brama_2.webp",
-        "./assets/images/lineups/ancient/f_bsite_1.webp"
+        "./assets/images/lineups/ancient/amain_3.webp",
+        "./assets/images/lineups/ancient/f_a_site_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "jump"
+        "action": "run"
       },
       "side": "t"
     },
     {
-      "title": "Rampa",
-      "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_rampa_0.webp",
+      "title": "Boost",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_boost_0.webp",
       "images": [
         "./assets/images/lineups/ancient/ct_1.webp",
-        "./assets/images/lineups/ancient/s_rampa_1.webp"
+        "./assets/images/lineups/ancient/m_boost_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "jump"
-      },
-      "side": "ct"
-    },
-    {
-      "title": "Brama",
-      "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_brama_0.webp",
-      "images": [
-        "./assets/images/lineups/ancient/ct_2.webp",
-        "./assets/images/lineups/ancient/s_brama_1.webp"
-      ],
-      "throw": {
-        "mouse": "left-click",
-        "action": "Skok w biegu"
-      },
-      "side": "ct"
-    },
-    {
-      "title": "Rampa",
-      "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_rampa_0.webp",
-      "images": [
-        "./assets/images/lineups/ancient/ct_3.webp",
-        "./assets/images/lineups/ancient/m_rampa_1.webp",
-        "./assets/images/lineups/ancient/m_rampa_2.webp"
-      ],
-      "throw": {
-        "mouse": "left-click",
-        "keys": [
-          "A"
-        ],
-        "action": "Skok w biegu"
-      },
-      "side": "ct"
-    },
-    {
-      "title": "Heaven",
-      "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_heaven_0.webp",
-      "images": [
-        "./assets/images/lineups/ancient/m_heaven_1.webp",
-        "./assets/images/lineups/ancient/m_heaven_2.webp"
-      ],
-      "throw": {
-        "mouse": "both-click",
         "action": "Skok w biegu"
       },
       "side": "ct"
@@ -356,14 +277,14 @@
       "side": "ct"
     }
   ],
-  "Bombsite-A": [
+  "Bombsite-B": [
     {
-      "title": "CT",
+      "title": "Long",
       "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_ct_0.webp",
+      "preview": "./assets/images/lineups/ancient/s_long_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/amain_1.webp",
-        "./assets/images/lineups/ancient/s_ct_1.webp"
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_long_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
@@ -372,12 +293,12 @@
       "side": "t"
     },
     {
-      "title": "Rondo",
+      "title": "Short",
       "grenade": "smoke",
-      "preview": "./assets/images/lineups/ancient/s_rondo_2.webp",
+      "preview": "./assets/images/lineups/ancient/s_short_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/amain_1.webp",
-        "./assets/images/lineups/ancient/s_rondo_3.webp"
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_short_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
@@ -386,42 +307,121 @@
       "side": "t"
     },
     {
-      "title": "Site A",
+      "title": "Cave",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_cave_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_cave_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Wnęka",
       "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_a_site_0.webp",
+      "preview": "./assets/images/lineups/ancient/m_wneka_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/amain_2.webp",
-        "./assets/images/lineups/ancient/m_a_site_1.webp"
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/m_wneka_1.webp"
       ],
       "throw": {
-        "mouse": "left-click"
+        "mouse": "left-click",
+        "action": "jump"
       },
       "side": "t"
     },
     {
-      "title": "Site A",
+      "title": "Filar",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_filar_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/m_filar_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "Shift",
+          "W"
+        ],
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "B Site",
       "grenade": "flash",
-      "preview": "./assets/images/lineups/ancient/f_a_site_0.webp",
+      "preview": "./assets/images/lineups/ancient/f_bsite_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/amain_3.webp",
-        "./assets/images/lineups/ancient/f_a_site_1.webp"
+        "./assets/images/lineups/ancient/brama_2.webp",
+        "./assets/images/lineups/ancient/f_bsite_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "run"
+        "action": "jump"
       },
       "side": "t"
     },
     {
-      "title": "Boost",
-      "grenade": "molotov",
-      "preview": "./assets/images/lineups/ancient/m_boost_0.webp",
+      "title": "Rampa",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_rampa_0.webp",
       "images": [
         "./assets/images/lineups/ancient/ct_1.webp",
-        "./assets/images/lineups/ancient/m_boost_1.webp"
+        "./assets/images/lineups/ancient/s_rampa_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Brama",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_brama_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_2.webp",
+        "./assets/images/lineups/ancient/s_brama_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Rampa",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_rampa_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_3.webp",
+        "./assets/images/lineups/ancient/m_rampa_1.webp",
+        "./assets/images/lineups/ancient/m_rampa_2.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "A"
+        ],
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Heaven",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_heaven_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/m_heaven_1.webp",
+        "./assets/images/lineups/ancient/m_heaven_2.webp"
+      ],
+      "throw": {
+        "mouse": "both-click",
         "action": "Skok w biegu"
       },
       "side": "ct"

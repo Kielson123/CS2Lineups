@@ -15,13 +15,13 @@
     "id": "cache",
     "name": "Cache",
     "image": "./assets/images/maps/cache.webp",
-    "hasData": false
+    "hasData": true
   },
   {
     "id": "dust2",
     "name": "Dust II",
     "image": "./assets/images/maps/dust2.webp",
-    "hasData": false
+    "hasData": true
   },
   {
     "id": "inferno",
