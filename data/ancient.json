@@ -39,7 +39,7 @@
       "throw": {
         "mouse": "left-click"
       },
-      "side": "t"
+      "side": "both"
     },
     {
       "title": "Site A",

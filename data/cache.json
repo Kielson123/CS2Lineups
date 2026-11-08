@@ -142,7 +142,7 @@
         "mouse": "left-click",
         "action": "jump"
       },
-      "side": "t"
+      "side": "both"
     },
     {
       "title": "Site B",
@@ -169,7 +169,7 @@
         "mouse": "left-click",
         "action": "jump"
       },
-      "side": "t"
+      "side": "both"
     }
   ]
 }

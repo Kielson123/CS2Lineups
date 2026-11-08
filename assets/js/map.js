@@ -2,6 +2,33 @@ let currentMapData = null;
 let currentSide = 't';
 let currentExpandedCard = null;
 
+const GRENADE_ORDER = {
+    smoke: 1,
+    molotov: 2,
+    he: 3,
+    flash: 4
+};
+
+function getGrenadeType(grenade) {
+    if (!grenade) return 'smoke';
+    const g = String(grenade).toLowerCase().trim();
+    if (g === 'smoke' || g === 'smokes') return 'smoke';
+    if (g === 'molotov' || g === 'molotovs' || g === 'incendiary' || g === 'molo') return 'molotov';
+    if (g === 'he' || g === 'hegrenade' || g === 'he grenade' || g === 'he_grenade' || g === 'he-grenade' || g === 'he granade' || g === 'granade' || g === 'grenade') return 'he';
+    if (g === 'flash' || g === 'flashes' || g === 'flashbang' || g === 'flashbangs') return 'flash';
+    return g;
+}
+
+function getGrenadePriority(grenade) {
+    const type = getGrenadeType(grenade);
+    return GRENADE_ORDER[type] !== undefined ? GRENADE_ORDER[type] : 99;
+}
+
+function sortLineupsByGrenade(lineups) {
+    if (!Array.isArray(lineups)) return [];
+    return [...lineups].sort((a, b) => getGrenadePriority(a.grenade) - getGrenadePriority(b.grenade));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initMapPage();
     initSideSelector();
@@ -26,6 +53,11 @@ async function initMapPage() {
             throw new Error(`Data for map ${mapId} not found`);
         }
         currentMapData = await response.json();
+        Object.keys(currentMapData).forEach(sectionKey => {
+            if (Array.isArray(currentMapData[sectionKey])) {
+                currentMapData[sectionKey] = sortLineupsByGrenade(currentMapData[sectionKey]);
+            }
+        });
         renderMapContent(currentMapData);
     } catch (err) {
         console.warn(err);
@@ -76,7 +108,7 @@ function renderEmptyState(mapName) {
             <h3>Brak lineupów dla mapy ${mapName}</h3>
             <p>Lineupy dla tej mapy są w przygotowaniu i pojawią się wkrótce!</p>
             <br>
-            <a href="./map.html?map=ancient" class="nav-back">Zobacz Ancient</a>
+            <a href="./index.html" class="nav-back">Wróć</a>
         </div>
     `;
 }
@@ -128,7 +160,7 @@ function renderSideView() {
                 return s === currentSide || s === 'both';
             });
             if (matching.length > 0) {
-                filteredSections[sectionKey] = matching;
+                filteredSections[sectionKey] = sortLineupsByGrenade(matching);
                 totalSideLineups += matching.length;
             }
         }
@@ -199,7 +231,8 @@ function switchTab(sectionKey, clickedBtn) {
 function createLineupCard(lineup) {
     const isSpawnLineup = Array.isArray(lineup.spawns) && lineup.spawns.length > 0;
     const card = document.createElement('div');
-    card.className = `lineup-card ${lineup.grenade || 'smoke'} ${isSpawnLineup || lineup.isInstant ? 'is-instant' : ''}`;
+    const grenadeType = getGrenadeType(lineup.grenade);
+    card.className = `lineup-card ${grenadeType} ${isSpawnLineup || lineup.isInstant ? 'is-instant' : ''}`;
 
     let stepsHtml = '';
 

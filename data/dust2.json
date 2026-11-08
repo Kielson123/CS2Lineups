@@ -1,0 +1,275 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_ct_3.webp",
+      "images": [
+        "./assets/images/lineups/dust2/long_2.webp",
+        "./assets/images/lineups/dust2/s_ct_4.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Short",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_short_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/short_2.webp",
+        "./assets/images/lineups/dust2/s_short_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "both"
+    },
+    {
+      "title": "Car",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_car_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/long_3.webp",
+        "./assets/images/lineups/dust2/m_car_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "w"
+        ],
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "A Site",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_asite_2.webp",
+      "images": [
+        "./assets/images/lineups/dust2/short_3.webp",
+        "./assets/images/lineups/dust2/m_asite_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "both"
+    },
+    {
+      "title": "A Site",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_asite_4.webp",
+      "images": [
+        "./assets/images/lineups/dust2/long_4.webp",
+        "./assets/images/lineups/dust2/m_asite_5.webp",
+        "./assets/images/lineups/dust2/m_asite_6.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Long (1)",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/dust2/f_long_2.webp",
+      "images": [
+        "./assets/images/lineups/dust2/t_spawn_3.webp",
+        "./assets/images/lineups/dust2/f_long_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Long (2)",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/dust2/f_long_4.webp",
+      "images": [
+        "./assets/images/lineups/dust2/t_spawn_3.webp",
+        "./assets/images/lineups/dust2/f_long_5.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "A Site",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/dust2/f_asite_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/short_1.webp",
+        "./assets/images/lineups/dust2/f_asite_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Double Doorsy",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_double_doorsy_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/ct_3.webp",
+        "./assets/images/lineups/dust2/s_double_doorsy_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "A Site",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_asite_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/ct_5.webp",
+        "./assets/images/lineups/dust2/m_asite_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Long",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/dust2/f_long_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/long_1.webp",
+        "./assets/images/lineups/dust2/f_long_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    }
+  ],
+  "Mid": [
+    {
+      "title": "Brama",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_brama_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/t_spawn_2.webp",
+        "./assets/images/lineups/dust2/s_brama_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/mid_1.webp",
+        "./assets/images/lineups/dust2/s_ct_1.webp",
+        "./assets/images/lineups/dust2/s_ct_2.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Suicide",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_suicide_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/ct_2.webp",
+        "./assets/images/lineups/dust2/s_suicide_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Short",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_short_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/ct_4.webp",
+        "./assets/images/lineups/dust2/m_short_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    }
+  ],
+  "Bombsite-B": [
+    {
+      "title": "Okno",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_okno_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/t_spawn_1.webp",
+        "./assets/images/lineups/dust2/s_okno_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Drzwi",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/dust2/s_drzwi_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/t_spawn_1.webp",
+        "./assets/images/lineups/dust2/s_drzwi_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "B Site",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/dust2/m_bsite_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/ct_1.webp",
+        "./assets/images/lineups/dust2/m_bsite_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "B Site",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/dust2/f_bsite_0.webp",
+      "images": [
+        "./assets/images/lineups/dust2/tunele_1.webp",
+        "./assets/images/lineups/dust2/f_bsite_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ]
+}

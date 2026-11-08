@@ -1,12 +1,12 @@
 :root {
-    --bg-primary: #000626;
-    --bg-secondary: #0D1951;
-    --bg-card: #141f59;
-    --bg-card-hover: #1a2872;
-    --bg-tab: #1f2b6b;
-    --bg-tab-hover: #384589;
-    --bg-tab-active: #29377B;
-    --text-primary: #f0f4f8;
+    --bg-primary: #0b0c10;
+    --bg-secondary: #13141a;
+    --bg-card: #171821;
+    --bg-card-hover: #1f202b;
+    --bg-tab: #13141a;
+    --bg-tab-hover: #22232e;
+    --bg-tab-active: #1d1e28;
+    --text-primary: #f3f4f6;
     --text-muted: #94a3b8;
     --smoke-color: #4ba3ff;
     --flash-color: #ffe66d;
@@ -72,7 +72,7 @@ body {
 }
 
 .brand-title span {
-    color: var(--smoke-color);
+    color: #de9b35;
 }
 
 .nav-back {
@@ -126,8 +126,8 @@ main {
 
 .map-card:hover {
     transform: translateY(-6px);
-    border-color: var(--smoke-color);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .map-card-img-wrapper {
@@ -135,7 +135,7 @@ main {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: #080e2b;
+    background: #0d0e13;
 }
 
 .map-card-img {
@@ -167,14 +167,16 @@ main {
     font-size: 0.75rem;
     padding: 4px 10px;
     border-radius: 20px;
-    background: rgba(75, 163, 255, 0.15);
-    color: var(--smoke-color);
+    background: rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
     font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .map-badge.empty {
-    background: rgba(148, 163, 184, 0.15);
+    background: rgba(255, 255, 255, 0.03);
     color: var(--text-muted);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Side Selector (T / CT Switch) */
@@ -291,7 +293,7 @@ main {
 .tab-link.active {
     background: var(--bg-tab-active);
     color: var(--text-primary);
-    box-shadow: inset 0 -3px 0 var(--smoke-color);
+    box-shadow: inset 0 -3px 0 #f3f4f6;
 }
 
 .tab-pane {
@@ -325,7 +327,7 @@ main {
 
 .lineup-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
 }
 
 .lineup-card.smoke { border-color: var(--smoke-color); }
@@ -342,7 +344,7 @@ main {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: #080d28;
+    background: #0d0e13;
 }
 
 .lineup-preview-img {
@@ -357,6 +359,17 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #1b1e28;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background-color var(--transition);
+}
+
+.lineup-card:hover .lineup-card-header {
+    background: #272a38;
+}
+
+.lineup-card.expanded .lineup-card-header {
+    background: #1b1e28;
 }
 
 .lineup-card-title {
@@ -380,7 +393,7 @@ main {
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .lineup-card.expanded .lineup-details {
@@ -460,7 +473,7 @@ main {
 .step-card {
     flex: 1 1 450px;
     max-width: 600px;
-    background: #091238;
+    background: #111218;
     border-radius: var(--radius-sm);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -471,7 +484,7 @@ main {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-muted);
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .step-card img {
@@ -494,7 +507,7 @@ main {
     gap: 12px;
     flex-wrap: wrap;
     padding: 16px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-sm);
     margin: 10px auto 0 auto;
     max-width: 600px;
@@ -504,7 +517,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #080d26;
+    background: #13141b;
     padding: 6px 14px;
     border-radius: var(--radius-sm);
     font-weight: 600;
@@ -519,10 +532,10 @@ main {
 }
 
 kbd {
-    background-color: #1e293b;
-    border: 1px solid #475569;
+    background-color: #181922;
+    border: 1px solid #363946;
     border-radius: 4px;
-    box-shadow: 0 2px 0 #0f172a;
+    box-shadow: 0 2px 0 #0a0b0e;
     color: #f8fafc;
     display: inline-block;
     font-size: 1rem;
@@ -532,8 +545,9 @@ kbd {
 }
 
 .action-badge {
-    background: rgba(75, 163, 255, 0.2);
-    color: var(--smoke-color);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 6px 14px;
     border-radius: var(--radius-sm);
     font-weight: 700;
