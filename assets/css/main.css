@@ -209,8 +209,11 @@ main {
     transform: translateY(-2px);
 }
 
-.side-btn .side-icon {
-    font-size: 1.3rem;
+.side-btn .side-logo {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
 
 .side-count {
@@ -381,7 +384,7 @@ main {
 }
 
 .lineup-card.expanded .lineup-details {
-    max-height: 2000px;
+    max-height: 8000px;
     opacity: 1;
     padding: 24px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -393,6 +396,65 @@ main {
     gap: 20px;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+/* Instant Lineups (Variant A - paired rows) */
+.instant-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.instant-spawn-row {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.instant-spawn-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.instant-spawn-header .throw-instructions {
+    margin: 0;
+    padding: 4px 8px;
+    background: transparent;
+}
+
+.instant-spawn-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.instant-steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+}
+
+.instant-steps-grid .step-card {
+    flex: 1 1 320px;
+    max-width: 100%;
 }
 
 .step-card {

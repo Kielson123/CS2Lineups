@@ -1,18 +1,430 @@
 {
   "Bombsite-B": [
     {
-      "id": "long",
       "title": "Long",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/ancient/s_long_0.webp",
       "images": [
-        "./assets/images/lineups/ancient/doors.webp",
+        "./assets/images/lineups/ancient/brama_1.webp",
         "./assets/images/lineups/ancient/s_long_1.webp"
       ],
       "throw": {
         "mouse": "left-click",
         "action": "jump"
-      }
+      },
+      "side": "t"
+    },
+    {
+      "title": "Short",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_short_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_short_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Cave",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_cave_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_cave_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Wnęka",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_wneka_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/m_wneka_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Filar",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_filar_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/m_filar_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "Shift",
+          "W"
+        ],
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "B Site",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/ancient/f_bsite_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_2.webp",
+        "./assets/images/lineups/ancient/f_bsite_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Rampa",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_rampa_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_1.webp",
+        "./assets/images/lineups/ancient/s_rampa_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Brama",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_brama_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_2.webp",
+        "./assets/images/lineups/ancient/s_brama_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Rampa",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_rampa_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_3.webp",
+        "./assets/images/lineups/ancient/m_rampa_1.webp",
+        "./assets/images/lineups/ancient/m_rampa_2.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "A"
+        ],
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Heaven",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_heaven_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/m_heaven_1.webp",
+        "./assets/images/lineups/ancient/m_heaven_2.webp"
+      ],
+      "throw": {
+        "mouse": "both-click",
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
+    }
+  ],
+  "Mid": [
+    {
+      "title": "Red Room",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_red_room_0.webp",
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t",
+      "spawns": [
+        {
+          "title": "Sposób #1",
+          "images": [
+            "./assets/images/lineups/ancient/t_spawn_2.webp",
+            "./assets/images/lineups/ancient/s_red_room_1.webp"
+          ]
+        },
+        {
+          "title": "Sposób #2",
+          "images": [
+            "./assets/images/lineups/ancient/t_spawn_3.webp",
+            "./assets/images/lineups/ancient/s_red_room_2.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Instant Red Room",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_instant_red_room_0.webp",
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "W"
+        ],
+        "action": "jump"
+      },
+      "side": "t",
+      "spawns": [
+        {
+          "title": "Spawn #1",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_red_room_1.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_2.webp"
+          ]
+        },
+        {
+          "title": "Spawn #2",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_red_room_3.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_4_1.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_4_2.webp"
+          ],
+          "throw": {
+            "action": "po kroku #2 iść w lewo, aż krok #3"
+          }
+        },
+        {
+          "title": "Spawn #3",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_red_room_5.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_6_1.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_6_2.webp"
+          ],
+          "throw": {
+            "action": "po kroku #2 iść w prawo, aż krok #3"
+          }
+        },
+        {
+          "title": "Spawn #4",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_red_room_7.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_8.webp"
+          ]
+        },
+        {
+          "title": "Spawn #5",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_red_room_9.webp",
+            "./assets/images/lineups/ancient/s_instant_red_room_10.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Heaven",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_heaven_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/t_spawn_1.webp",
+        "./assets/images/lineups/ancient/s_heaven_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Rondo",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_rondo_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/t_spawn_1.webp",
+        "./assets/images/lineups/ancient/s_rondo_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Wnęka",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_wneka_2.webp",
+      "images": [
+        "./assets/images/lineups/ancient/m_wneka_3.webp",
+        "./assets/images/lineups/ancient/m_wneka_4.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Mid",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/ancient/f_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/t_spawn_4.webp",
+        "./assets/images/lineups/ancient/f_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Instant Zakręt",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_instant_zakret_0.webp",
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "Shift",
+          "W"
+        ],
+        "action": "jump"
+      },
+      "side": "ct",
+      "spawns": [
+        {
+          "title": "Spawn #1",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_zakret_1.webp",
+            "./assets/images/lineups/ancient/s_instant_zakret_2.webp"
+          ]
+        },
+        {
+          "title": "Spawn #2",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_zakret_3.webp",
+            "./assets/images/lineups/ancient/s_instant_zakret_4.webp"
+          ]
+        },
+        {
+          "title": "Spawn #3",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_zakret_5.webp",
+            "./assets/images/lineups/ancient/s_instant_zakret_6.webp"
+          ]
+        },
+        {
+          "title": "Spawn #4",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_zakret_7.webp",
+            "./assets/images/lineups/ancient/s_instant_zakret_8.webp"
+          ]
+        },
+        {
+          "title": "Spawn #5",
+          "images": [
+            "./assets/images/lineups/ancient/s_instant_zakret_9.webp",
+            "./assets/images/lineups/ancient/s_instant_zakret_10.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Zakręt",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_zakret_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/m_zakret_1.webp",
+        "./assets/images/lineups/ancient/m_zakret_2.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "ct"
+    }
+  ],
+  "Bombsite-A": [
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/amain_1.webp",
+        "./assets/images/lineups/ancient/s_ct_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Rondo",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_rondo_2.webp",
+      "images": [
+        "./assets/images/lineups/ancient/amain_1.webp",
+        "./assets/images/lineups/ancient/s_rondo_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site A",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/amain_2.webp",
+        "./assets/images/lineups/ancient/m_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site A",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/ancient/f_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/amain_3.webp",
+        "./assets/images/lineups/ancient/f_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Boost",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/ancient/m_boost_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/ct_1.webp",
+        "./assets/images/lineups/ancient/m_boost_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok w biegu"
+      },
+      "side": "ct"
     }
   ]
 }

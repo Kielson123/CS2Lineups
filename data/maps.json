@@ -33,7 +33,7 @@
     "id": "mirage",
     "name": "Mirage",
     "image": "./assets/images/maps/mirage.webp",
-    "hasData": true
+    "hasData": false
   },
   {
     "id": "nuke",

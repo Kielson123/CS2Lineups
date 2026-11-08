@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import time
 from PIL import Image
 
 MAX_WIDTH = 1920
@@ -110,12 +111,8 @@ def scan_and_optimize():
         print(f"\nUkonczono! Pomyslnie zoptymalizowano: {converted_count}/{len(files_to_process)} plikow.")
 
     print("\n" + "=" * 60)
-    # Only pause if run interactively in terminal or double-clicked via Explorer
-    if sys.stdin and sys.stdin.isatty():
-        try:
-            input("Nacisnij ENTER, aby zakonczyc...")
-        except (EOFError, KeyboardInterrupt):
-            pass
+    print("Gotowe! Program zamknie sie automatycznie za chwile...")
+    time.sleep(1.2)
 
 if __name__ == '__main__':
     scan_and_optimize()
