@@ -45,7 +45,7 @@
       "side": "t"
     },
     {
-      "title": "A Site",
+      "title": "Site A",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/dust2/m_asite_2.webp",
       "images": [
@@ -59,7 +59,7 @@
       "side": "both"
     },
     {
-      "title": "A Site",
+      "title": "Site A",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/dust2/m_asite_4.webp",
       "images": [
@@ -102,7 +102,7 @@
       "side": "t"
     },
     {
-      "title": "A Site",
+      "title": "Site A",
       "grenade": "flash",
       "preview": "./assets/images/lineups/dust2/f_asite_0.webp",
       "images": [
@@ -129,7 +129,7 @@
       "side": "ct"
     },
     {
-      "title": "A Site",
+      "title": "Site A",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/dust2/m_asite_0.webp",
       "images": [
@@ -244,7 +244,7 @@
       "side": "t"
     },
     {
-      "title": "B Site",
+      "title": "Site B",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/dust2/m_bsite_0.webp",
       "images": [
@@ -258,7 +258,7 @@
       "side": "ct"
     },
     {
-      "title": "B Site",
+      "title": "Site B",
       "grenade": "flash",
       "preview": "./assets/images/lineups/dust2/f_bsite_0.webp",
       "images": [
