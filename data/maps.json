@@ -9,7 +9,7 @@
     "id": "anubis",
     "name": "Anubis",
     "image": "./assets/images/maps/anubis.webp",
-    "hasData": false
+    "hasData": true
   },
   {
     "id": "cache",

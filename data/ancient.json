@@ -321,6 +321,19 @@
       "side": "t"
     },
     {
+      "title": "Lurkowy Site B",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/ancient/s_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/brama_1.webp",
+        "./assets/images/lineups/ancient/s_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
       "title": "Wnęka",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/ancient/m_wneka_0.webp",

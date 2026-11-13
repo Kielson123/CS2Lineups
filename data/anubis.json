@@ -1,0 +1,340 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "Kamery",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_kamery_2.webp",
+      "images": [
+        "./assets/images/lineups/anubis/woda_2.webp",
+        "./assets/images/lineups/anubis/s_kamery_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Heaven",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_heaven_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/woda_1.webp",
+        "./assets/images/lineups/anubis/s_heaven_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Lurkowy Site A",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/amain_1.webp",
+        "./assets/images/lineups/anubis/s_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site A",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/woda_3.webp",
+        "./assets/images/lineups/anubis/m_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "A Main",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_a_main_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/asite_1.webp",
+        "./assets/images/lineups/anubis/s_a_main_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "A Main",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_a_main_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/asite_2.webp",
+        "./assets/images/lineups/anubis/m_a_main_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "ct"
+    }
+  ],
+  "Mid / Woda": [
+    {
+      "title": "Cave",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_cave_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/t_spawn_2.webp",
+        "./assets/images/lineups/anubis/s_cave_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Mid",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/t_spawn_2.webp",
+        "./assets/images/lineups/anubis/s_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Kamery",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_kamery_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_3.webp",
+        "./assets/images/lineups/anubis/s_kamery_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Muzeum",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_muzeum_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_3.webp",
+        "./assets/images/lineups/anubis/s_muzeum_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "Skok Kucając",
+        "keys": [
+          "W"
+        ]
+      },
+      "side": "t"
+    },
+    {
+      "title": "Mid",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_1.webp",
+        "./assets/images/lineups/anubis/m_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Okno",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_okno_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_2.webp",
+        "./assets/images/lineups/anubis/m_okno_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Mid",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_4.webp",
+        "./assets/images/lineups/anubis/f_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Schody",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_schody_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/ct_1.webp",
+        "./assets/images/lineups/anubis/s_schody_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Woda",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_woda_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bsite_2.webp",
+        "./assets/images/lineups/anubis/s_woda_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Mid",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_mid_2.webp",
+      "images": [
+        "./assets/images/lineups/anubis/mid_5.webp",
+        "./assets/images/lineups/anubis/f_mid_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    }
+  ],
+  "Bombsite-B": [
+    {
+      "title": "CT i Muzeum",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_ct_muzeum_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bmain_1.webp",
+        "./assets/images/lineups/anubis/s_ct_muzeum_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Tylny Site B",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bmain_1.webp",
+        "./assets/images/lineups/anubis/s_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Lurkowy Site B",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/anubis/s_b_site_2.webp",
+      "images": [
+        "./assets/images/lineups/anubis/t_spawn_1.webp",
+        "./assets/images/lineups/anubis/s_b_site_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Filar",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_b_filar_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bmain_1.webp",
+        "./assets/images/lineups/anubis/m_b_filar_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ninja",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_ninja_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/cave_1.webp",
+        "./assets/images/lineups/anubis/m_ninja_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bmain_1.webp",
+        "./assets/images/lineups/anubis/f_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Tylny Site B",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/anubis/m_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/muzeum_1.webp",
+        "./assets/images/lineups/anubis/m_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Cave",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_cave_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bsite_1.webp",
+        "./assets/images/lineups/anubis/f_cave_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    }
+  ]
+}
