@@ -222,6 +222,20 @@
         "mouse": "left-click"
       },
       "side": "ct"
+    },
+    {
+      "title": "Woda",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_woda_0.webp",
+      "images": [
+        "./assets/images/lineups/anubis/cave_2.webp",
+        "./assets/images/lineups/anubis/f_woda_1.webp"
+      ],
+      "throw": {
+        "mouse": "right-click",
+        "action": "jump"
+      },
+      "side": "ct"
     }
   ],
   "Bombsite-B": [
@@ -320,6 +334,19 @@
       "throw": {
         "mouse": "left-click",
         "action": "run"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Site B",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/anubis/f_b_site_2.webp",
+      "images": [
+        "./assets/images/lineups/anubis/bsite_2.webp",
+        "./assets/images/lineups/anubis/f_b_site_3.webp"
+      ],
+      "throw": {
+        "mouse": "right-click"
       },
       "side": "ct"
     },

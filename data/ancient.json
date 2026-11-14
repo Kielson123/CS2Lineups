@@ -380,6 +380,20 @@
       "side": "t"
     },
     {
+      "title": "Cave",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/ancient/f_cave_0.webp",
+      "images": [
+        "./assets/images/lineups/ancient/cave_1.webp",
+        "./assets/images/lineups/ancient/f_cave_1.webp"
+      ],
+      "throw": {
+        "mouse": "right-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
       "title": "Rampa",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/ancient/s_rampa_0.webp",
