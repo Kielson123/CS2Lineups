@@ -1,5 +1,13 @@
+const STORAGE_KEYS = {
+    VIEW_MODE: 'cs2_lineups_view_mode', // 'standard' | 'browse'
+    SIDE: 'cs2_lineups_side',           // 't' | 'ct'
+    SITE: 'cs2_lineups_site'            // 'Bombsite-A'
+};
+
 let currentMapData = null;
+let currentMapId = 'mirage';
 let currentSide = 't';
+let currentViewMode = 'standard';
 let currentExpandedCard = null;
 
 const GRENADE_ORDER = {
@@ -12,11 +20,21 @@ const GRENADE_ORDER = {
 function getGrenadeType(grenade) {
     if (!grenade) return 'smoke';
     const g = String(grenade).toLowerCase().trim();
-    if (g === 'smoke' || g === 'smokes') return 'smoke';
-    if (g === 'molotov' || g === 'molotovs' || g === 'incendiary' || g === 'molo') return 'molotov';
-    if (g === 'he' || g === 'hegrenade' || g === 'he grenade' || g === 'he_grenade' || g === 'he-grenade' || g === 'he granade' || g === 'granade' || g === 'grenade') return 'he';
-    if (g === 'flash' || g === 'flashes' || g === 'flashbang' || g === 'flashbangs') return 'flash';
-    return g;
+    if (g === 'molotov' || g === 'incendiary') return 'molotov';
+    if (g === 'flash' || g === 'flashbang') return 'flash';
+    if (g === 'he' || g.includes('grenade')) return 'he';
+    return 'smoke';
+}
+
+function getGrenadeDisplayLabel(grenade) {
+    const type = getGrenadeType(grenade);
+    switch (type) {
+        case 'smoke': return 'Smoke';
+        case 'molotov': return 'Molotov';
+        case 'flash': return 'Flash';
+        case 'he': return 'Granat HE';
+        default: return type ? type.toUpperCase() : 'Smoke';
+    }
 }
 
 function getGrenadePriority(grenade) {
@@ -29,39 +47,71 @@ function sortLineupsByGrenade(lineups) {
     return [...lineups].sort((a, b) => getGrenadePriority(a.grenade) - getGrenadePriority(b.grenade));
 }
 
+function getSectionCleanName(key) {
+    return String(key).replace(/-/g, ' ');
+}
+
+function getPolishPlural(count, many = 'ów', few = 'y', one = '') {
+    if (count === 1) return one;
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) {
+        return few;
+    }
+    return many;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    initMapPage();
+    initViewModeToggle();
     initSideSelector();
     initLightbox();
+    initMapPage();
 });
 
-async function initMapPage() {
-    const params = new URLSearchParams(window.location.search);
-    const mapId = (params.get('map') || 'mirage').toLowerCase();
+function initViewModeToggle() {
+    const btnStandard = document.getElementById('btn-mode-standard');
+    const btnBrowse = document.getElementById('btn-mode-browse');
 
-    const titleEl = document.getElementById('map-title');
-    const headerTitleEl = document.getElementById('header-map-title');
-    const pageTitle = mapId.charAt(0).toUpperCase() + mapId.slice(1);
-    
-    document.title = `${pageTitle} Lineups - CS2`;
-    if (titleEl) titleEl.textContent = pageTitle;
-    if (headerTitleEl) headerTitleEl.textContent = `${pageTitle} Lineups`;
+    if (btnStandard) {
+        btnStandard.addEventListener('click', () => setViewMode('standard'));
+    }
+    if (btnBrowse) {
+        btnBrowse.addEventListener('click', () => setViewMode('browse'));
+    }
+}
+
+function setViewMode(mode) {
+    if (currentViewMode === mode && document.getElementById(mode === 'browse' ? 'browse-view' : 'standard-view').style.display !== 'none') {
+        return;
+    }
+    currentViewMode = mode;
 
     try {
-        const response = await fetch(`./data/${mapId}.json`);
-        if (!response.ok) {
-            throw new Error(`Data for map ${mapId} not found`);
+        localStorage.setItem(STORAGE_KEYS.VIEW_MODE, mode);
+    } catch (e) {
+        console.warn('localStorage not available', e);
+    }
+
+    const btnStandard = document.getElementById('btn-mode-standard');
+    const btnBrowse = document.getElementById('btn-mode-browse');
+    if (btnStandard) btnStandard.classList.toggle('active', mode === 'standard');
+    if (btnBrowse) btnBrowse.classList.toggle('active', mode === 'browse');
+
+    const standardView = document.getElementById('standard-view');
+    const browseView = document.getElementById('browse-view');
+
+    if (mode === 'browse') {
+        if (standardView) standardView.style.display = 'none';
+        if (browseView) {
+            browseView.style.display = 'block';
+            renderBrowseView();
         }
-        currentMapData = await response.json();
-        Object.keys(currentMapData).forEach(sectionKey => {
-            if (Array.isArray(currentMapData[sectionKey])) {
-                currentMapData[sectionKey] = sortLineupsByGrenade(currentMapData[sectionKey]);
-            }
-        });
-        renderMapContent(currentMapData);
-    } catch (err) {
-        console.warn(err);
-        renderEmptyState(pageTitle);
+    } else {
+        if (browseView) browseView.style.display = 'none';
+        if (standardView) {
+            standardView.style.display = 'block';
+            renderSideView();
+        }
     }
 }
 
@@ -78,6 +128,12 @@ function initSideSelector() {
 function switchSide(side) {
     if (currentSide === side) return;
     currentSide = side;
+
+    try {
+        localStorage.setItem(`${STORAGE_KEYS.SIDE}_${currentMapId}`, side);
+    } catch (e) {
+        console.warn('localStorage not available', e);
+    }
 
     const btnT = document.getElementById('btn-t-side');
     const btnCT = document.getElementById('btn-ct-side');
@@ -97,20 +153,83 @@ function switchSide(side) {
     }
 }
 
+async function initMapPage() {
+    const params = new URLSearchParams(window.location.search);
+    currentMapId = (params.get('map') || 'mirage').toLowerCase();
+
+    const headerTitleEl = document.getElementById('header-map-title');
+    const pageTitle = currentMapId.charAt(0).toUpperCase() + currentMapId.slice(1);
+
+    document.title = `${pageTitle} Lineups - CS2`;
+    if (headerTitleEl) headerTitleEl.textContent = `${pageTitle} Lineups`;
+
+    // Restore saved preferences from localStorage (per-map for side, global for view mode)
+    try {
+        const savedMode = localStorage.getItem(STORAGE_KEYS.VIEW_MODE);
+        if (savedMode === 'browse' || savedMode === 'standard') {
+            currentViewMode = savedMode;
+        }
+
+        const savedSide = localStorage.getItem(`${STORAGE_KEYS.SIDE}_${currentMapId}`);
+        if (savedSide === 't' || savedSide === 'ct') {
+            currentSide = savedSide;
+        } else {
+            currentSide = 't';
+        }
+    } catch (e) {
+        console.warn('localStorage read error', e);
+        currentSide = 't';
+    }
+
+    // Update Side Buttons UI
+    const btnT = document.getElementById('btn-t-side');
+    const btnCT = document.getElementById('btn-ct-side');
+    if (btnT && btnCT) {
+        btnT.classList.toggle('active', currentSide === 't');
+        btnCT.classList.toggle('active', currentSide === 'ct');
+    }
+
+    // Update View Mode Toggle UI
+    const btnStandard = document.getElementById('btn-mode-standard');
+    const btnBrowse = document.getElementById('btn-mode-browse');
+    if (btnStandard) btnStandard.classList.toggle('active', currentViewMode === 'standard');
+    if (btnBrowse) btnBrowse.classList.toggle('active', currentViewMode === 'browse');
+
+    try {
+        const response = await fetch(`./data/${currentMapId}.json`);
+        if (!response.ok) {
+            throw new Error(`Data for map ${currentMapId} not found`);
+        }
+        currentMapData = await response.json();
+        Object.keys(currentMapData).forEach(sectionKey => {
+            if (Array.isArray(currentMapData[sectionKey])) {
+                currentMapData[sectionKey] = sortLineupsByGrenade(currentMapData[sectionKey]);
+            }
+        });
+        renderMapContent(currentMapData);
+    } catch (err) {
+        console.warn(err);
+        renderEmptyState(pageTitle);
+    }
+}
+
 function renderEmptyState(mapName) {
-    const container = document.getElementById('map-content');
+    const standardView = document.getElementById('standard-view');
+    const browseView = document.getElementById('browse-view');
     const sideSelector = document.getElementById('side-selector');
     if (sideSelector) sideSelector.style.display = 'none';
-    if (!container) return;
-
-    container.innerHTML = `
-        <div class="empty-state">
-            <h3>Brak lineupów dla mapy ${mapName}</h3>
-            <p>Lineupy dla tej mapy są w przygotowaniu i pojawią się wkrótce!</p>
-            <br>
-            <a href="./index.html" class="nav-back">Wróć</a>
-        </div>
-    `;
+    if (browseView) browseView.style.display = 'none';
+    if (standardView) {
+        standardView.style.display = 'block';
+        standardView.innerHTML = `
+            <div class="empty-state">
+                <h3>Brak lineupów dla mapy ${mapName}</h3>
+                <p>Lineupy dla tej mapy są w przygotowaniu i pojawią się wkrótce!</p>
+                <br>
+                <a href="./index.html" class="nav-back">Wróć</a>
+            </div>
+        `;
+    }
 }
 
 function renderMapContent(data) {
@@ -137,9 +256,23 @@ function renderMapContent(data) {
     if (tCountEl) tCountEl.textContent = tCount;
     if (ctCountEl) ctCountEl.textContent = ctCount;
 
-    renderSideView();
+    const standardView = document.getElementById('standard-view');
+    const browseView = document.getElementById('browse-view');
+
+    if (currentViewMode === 'browse') {
+        if (standardView) standardView.style.display = 'none';
+        if (browseView) browseView.style.display = 'block';
+        renderBrowseView();
+    } else {
+        if (browseView) browseView.style.display = 'none';
+        if (standardView) standardView.style.display = 'block';
+        renderSideView();
+    }
 }
 
+/* ==========================================================================
+   Standard Tabbed View
+   ========================================================================== */
 function renderSideView() {
     const tabsNav = document.getElementById('tab-buttons');
     const tabsContainer = document.getElementById('tabs-container');
@@ -152,7 +285,9 @@ function renderSideView() {
     const filteredSections = {};
     let totalSideLineups = 0;
 
-    Object.keys(currentMapData).forEach(sectionKey => {
+    const allKeys = Object.keys(currentMapData);
+
+    allKeys.forEach(sectionKey => {
         const rawLineups = currentMapData[sectionKey];
         if (Array.isArray(rawLineups)) {
             const matching = rawLineups.filter(l => {
@@ -186,13 +321,25 @@ function renderSideView() {
     tabsNav.style.display = 'flex';
     const sectionKeys = Object.keys(filteredSections);
 
+    // Retrieve saved site preference for this map
+    let savedSite = null;
+    try {
+        savedSite = localStorage.getItem(`${STORAGE_KEYS.SITE}_${currentMapId}`);
+    } catch (e) {}
+
+    let activeIndex = 0;
+    if (savedSite && sectionKeys.includes(savedSite)) {
+        activeIndex = sectionKeys.indexOf(savedSite);
+    }
+
     sectionKeys.forEach((sectionKey, index) => {
-        const cleanName = sectionKey.replace(/-/g, ' ');
+        const cleanName = getSectionCleanName(sectionKey);
         const count = filteredSections[sectionKey].length;
+        const isActive = index === activeIndex;
 
         // Tab button with count
         const btn = document.createElement('button');
-        btn.className = `tab-link ${index === 0 ? 'active' : ''}`;
+        btn.className = `tab-link ${isActive ? 'active' : ''}`;
         btn.textContent = `${cleanName} (${count})`;
         btn.addEventListener('click', (e) => switchTab(sectionKey, e.currentTarget));
         tabsNav.appendChild(btn);
@@ -200,7 +347,7 @@ function renderSideView() {
         // Tab pane
         const pane = document.createElement('div');
         pane.id = `tab-${sectionKey}`;
-        pane.className = `tab-pane ${index === 0 ? 'active' : ''}`;
+        pane.className = `tab-pane ${isActive ? 'active' : ''}`;
 
         const grid = document.createElement('div');
         grid.className = 'lineup-grid';
@@ -222,6 +369,12 @@ function switchTab(sectionKey, clickedBtn) {
     const targetPane = document.getElementById(`tab-${sectionKey}`);
     if (targetPane) targetPane.classList.add('active');
 
+    try {
+        localStorage.setItem(`${STORAGE_KEYS.SITE}_${currentMapId}`, sectionKey);
+    } catch (e) {
+        console.warn('localStorage not available', e);
+    }
+
     if (currentExpandedCard) {
         currentExpandedCard.classList.remove('expanded');
         currentExpandedCard = null;
@@ -232,7 +385,7 @@ function createLineupCard(lineup) {
     const isSpawnLineup = Array.isArray(lineup.spawns) && lineup.spawns.length > 0;
     const card = document.createElement('div');
     const grenadeType = getGrenadeType(lineup.grenade);
-    card.className = `lineup-card ${grenadeType} ${isSpawnLineup || lineup.isInstant ? 'is-instant' : ''}`;
+    card.className = `lineup-card ${grenadeType} ${isSpawnLineup ? 'is-instant' : ''}`;
 
     let stepsHtml = '';
 
@@ -261,34 +414,6 @@ function createLineupCard(lineup) {
                 </div>
             `;
         });
-        stepsHtml = `<div class="instant-container">${rows.join('')}</div>`;
-    } else if (lineup.isInstant && Array.isArray(lineup.images)) {
-        // Fallback for flat images array
-        const rows = [];
-        for (let i = 0; i < lineup.images.length; i += 2) {
-            const spawnNum = Math.floor(i / 2) + 1;
-            const img1 = lineup.images[i];
-            const img2 = lineup.images[i + 1];
-
-            rows.push(`
-                <div class="instant-spawn-row">
-                    <div class="instant-spawn-header">
-                        <span class="instant-spawn-pill">Spawn #${spawnNum}</span>
-                    </div>
-                    <div class="instant-steps-grid">
-                        <div class="step-card">
-                            <div class="step-label">Krok 1</div>
-                            <img src="${img1}" alt="${lineup.title} - Spawn #${spawnNum} - krok 1" class="zoomable-img" loading="lazy">
-                        </div>
-                        ${img2 ? `
-                        <div class="step-card">
-                            <div class="step-label">Krok 2</div>
-                            <img src="${img2}" alt="${lineup.title} - Spawn #${spawnNum} - krok 2" class="zoomable-img" loading="lazy">
-                        </div>` : ''}
-                    </div>
-                </div>
-            `);
-        }
         stepsHtml = `<div class="instant-container">${rows.join('')}</div>`;
     } else if (Array.isArray(lineup.images)) {
         stepsHtml = `
@@ -321,7 +446,6 @@ function createLineupCard(lineup) {
 
     card.addEventListener('click', (e) => {
         if (e.target.classList.contains('zoomable-img')) {
-            openLightbox(e.target.src, e.target.alt);
             return;
         }
         toggleExpandCard(card);
@@ -379,11 +503,6 @@ function renderThrowInstructions(lineup) {
         `;
     }
 
-    if (lineup.instructions) {
-        const clean = lineup.instructions.replace(/\.\.\/icons\//g, './assets/icons/');
-        return `<div class="throw-instructions">${clean}</div>`;
-    }
-
     return '';
 }
 
@@ -406,6 +525,360 @@ function toggleExpandCard(card) {
     }, 250);
 }
 
+/* ==========================================================================
+   Continuous Browsing Mode View
+   ========================================================================== */
+const STANDARD_ACTIONS = new Set([
+    'jump',
+    'run',
+    'stand',
+    'skok',
+    'bieg',
+    'w biegu',
+    'w miejscu',
+    'skok w biegu',
+    'skok kucając',
+    'jump-throw',
+    'run-throw'
+]);
+
+function isStandardAction(action) {
+    if (!action) return false;
+    return STANDARD_ACTIONS.has(String(action).trim().toLowerCase());
+}
+
+function renderCompactThrowBadges(throwObj) {
+    if (!throwObj) return '';
+
+    let mouseHtml = '';
+    if (throwObj.mouse) {
+        const m = String(throwObj.mouse).toLowerCase();
+        let label = 'Lewy';
+        let icon = 'left-click';
+        if (m.includes('right')) { label = 'Prawy'; icon = 'right-click'; }
+        else if (m.includes('both')) { label = 'Oba'; icon = 'both-click'; }
+        else if (m.includes('middle')) { label = 'Środkowy'; icon = 'middle-click'; }
+        else if (m.includes('no') || m.includes('none')) { label = 'Brak'; icon = 'no-click'; }
+
+        mouseHtml = `<span class="mouse-badge" title="${label} przycisk myszy"><img src="./assets/icons/${icon}.png" class="mouse-icon" alt="${label}"> ${label}</span>`;
+    }
+
+    const keysHtml = Array.isArray(throwObj.keys) && throwObj.keys.length > 0
+        ? throwObj.keys.map(k => `<kbd>${k.toUpperCase()}</kbd>`).join(' ')
+        : '';
+
+    let actionHtml = '';
+    if (throwObj.action && isStandardAction(throwObj.action)) {
+        const a = String(throwObj.action).toLowerCase();
+        let actionText = throwObj.action;
+        if (a === 'jump' || a === 'skok') actionText = 'Skok';
+        else if (a === 'run' || a === 'bieg') actionText = 'Bieg';
+        else if (a === 'stand' || a === 'w miejscu') actionText = 'W miejscu';
+        else if (a === 'skok w biegu') actionText = 'Skok w biegu';
+        else if (a === 'skok kucając') actionText = 'Skok kucając';
+        actionHtml = `<span class="action-badge">${actionText}</span>`;
+    }
+
+    const parts = [];
+    if (mouseHtml) parts.push(mouseHtml);
+    if (keysHtml) parts.push(keysHtml);
+    if (actionHtml) parts.push(actionHtml);
+
+    if (parts.length > 0) {
+        return parts.join('<span class="instruction-divider">+</span>');
+    }
+
+    return '';
+}
+
+function createBrowseRowElement(item) {
+    const grenadeType = getGrenadeType(item.grenade);
+    const grenadeLabel = getGrenadeDisplayLabel(item.grenade);
+    const badgesHtml = renderCompactThrowBadges(item.throwObj);
+
+    const row = document.createElement('div');
+    row.className = `browse-row ${grenadeType}`;
+
+    const numImgs = item.images.length;
+    const imagesHtml = item.images.map((imgSrc, idx) => {
+        let stepLabel = 'Celowanie';
+        if (idx === 0) {
+            stepLabel = 'Ustawienie';
+        } else if (idx === numImgs - 1 && numImgs > 1) {
+            stepLabel = 'Efekt';
+        }
+
+        return `
+            <div class="browse-img-wrapper">
+                <span class="browse-img-step-tag">${stepLabel}</span>
+                <img src="${imgSrc}" alt="${item.title} - ${stepLabel}" class="zoomable-img browse-img" loading="lazy">
+            </div>
+        `;
+    }).join('');
+
+    const noteHtml = item.note ? `<div class="browse-info-note-cell">${item.note}</div>` : '';
+
+    row.innerHTML = `
+        <div class="browse-info-col">
+            <div class="browse-grenade-bar ${grenadeType}">${grenadeLabel}</div>
+            <div class="browse-info-content">
+                <div class="browse-info-title-cell">${item.title}</div>
+                <div class="browse-info-details">
+                    ${noteHtml}
+                    ${badgesHtml ? `<div class="browse-info-badges-cell">${badgesHtml}</div>` : ''}
+                </div>
+            </div>
+        </div>
+        <div class="browse-images-col">
+            ${imagesHtml}
+        </div>
+    `;
+
+    return row;
+}
+
+function createBrowseSiteGroup(side, sectionKey, lineups) {
+    const group = document.createElement('div');
+    group.className = 'browse-site-group';
+    group.id = `browse-${side}-${sectionKey}`;
+
+    const cleanName = getSectionCleanName(sectionKey);
+
+    const header = document.createElement('div');
+    header.className = 'browse-site-header';
+    header.innerHTML = `
+        <h3 class="browse-site-name">${cleanName}</h3>
+        <span class="browse-site-count">${lineups.length} lineup${getPolishPlural(lineups.length, 'ów', 'y', '')}</span>
+    `;
+    group.appendChild(header);
+
+    const rowsList = document.createElement('div');
+    rowsList.className = 'browse-rows-list';
+
+    lineups.forEach(lineup => {
+        // Lineup with spawns (multiple methods or spawns)
+        if (Array.isArray(lineup.spawns) && lineup.spawns.length > 0) {
+            lineup.spawns.forEach((spawn, sIdx) => {
+                const spawnTitle = spawn.title || `Spawn #${sIdx + 1}`;
+                const fullTitle = `${lineup.title} (${spawnTitle})`;
+                const spawnImages = Array.isArray(spawn.images) ? spawn.images : [];
+                const allImages = [...spawnImages];
+                if (lineup.preview) allImages.push(lineup.preview);
+
+                const baseThrow = lineup.throw || {};
+                const spawnThrow = spawn.throw || {};
+                let note = null;
+                let actionToUse = null;
+
+                if (spawnThrow.action) {
+                    if (isStandardAction(spawnThrow.action)) {
+                        actionToUse = spawnThrow.action;
+                    } else {
+                        note = spawnThrow.action;
+                        actionToUse = baseThrow.action || 'jump';
+                    }
+                } else {
+                    actionToUse = baseThrow.action || 'jump';
+                }
+
+                const effectiveThrow = {
+                    mouse: spawnThrow.mouse || baseThrow.mouse || 'left-click',
+                    keys: spawnThrow.keys || baseThrow.keys || [],
+                    action: actionToUse
+                };
+
+                const rowEl = createBrowseRowElement({
+                    title: fullTitle,
+                    grenade: lineup.grenade,
+                    throwObj: effectiveThrow,
+                    note: note,
+                    images: allImages
+                });
+                rowsList.appendChild(rowEl);
+            });
+        } else {
+            // Standard lineup
+            const stepImages = Array.isArray(lineup.images) ? lineup.images : [];
+            const allImages = [...stepImages];
+            if (lineup.preview) allImages.push(lineup.preview);
+
+            let note = null;
+            let effectiveThrow = lineup.throw || null;
+            if (effectiveThrow && effectiveThrow.action && !isStandardAction(effectiveThrow.action)) {
+                note = effectiveThrow.action;
+                effectiveThrow = { ...effectiveThrow, action: null };
+            }
+
+            const rowEl = createBrowseRowElement({
+                title: lineup.title,
+                grenade: lineup.grenade,
+                throwObj: effectiveThrow,
+                note: note,
+                images: allImages
+            });
+            rowsList.appendChild(rowEl);
+        }
+    });
+
+    group.appendChild(rowsList);
+    return group;
+}
+
+function renderBrowseView() {
+    const browseView = document.getElementById('browse-view');
+    if (!browseView || !currentMapData) return;
+
+    browseView.innerHTML = '';
+
+    // Group lineups by side (T and CT), and within each side by sectionKey in file order
+    const sectionKeys = Object.keys(currentMapData);
+
+    const tSections = {};
+    const ctSections = {};
+    let totalT = 0;
+    let totalCT = 0;
+
+    sectionKeys.forEach(sectionKey => {
+        const rawLineups = currentMapData[sectionKey];
+        if (!Array.isArray(rawLineups)) return;
+
+        const tMatching = rawLineups.filter(l => {
+            const s = l.side ? l.side.toLowerCase() : 't';
+            return s === 't' || s === 'both';
+        });
+        if (tMatching.length > 0) {
+            tSections[sectionKey] = sortLineupsByGrenade(tMatching);
+            totalT += tMatching.length;
+        }
+
+        const ctMatching = rawLineups.filter(l => {
+            const s = l.side ? l.side.toLowerCase() : 't';
+            return s === 'ct' || s === 'both';
+        });
+        if (ctMatching.length > 0) {
+            ctSections[sectionKey] = sortLineupsByGrenade(ctMatching);
+            totalCT += ctMatching.length;
+        }
+    });
+
+    if (totalT === 0 && totalCT === 0) {
+        browseView.innerHTML = `
+            <div class="empty-state">
+                <h3>Brak lineupów dla tej mapy</h3>
+                <p>Nie znaleziono lineupów do wyświetlenia.</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Quick navigation bar
+    const navBar = document.createElement('nav');
+    navBar.className = 'browse-quick-nav';
+    navBar.setAttribute('aria-label', 'Szybka nawigacja po bombsite\'ach');
+
+    let navHtml = '';
+    // T Nav Group
+    if (totalT > 0) {
+        navHtml += `
+            <div class="browse-nav-side-group">
+                <span class="browse-nav-side-tag t-tag">
+                    <img src="./assets/icons/t.png" alt="T"> T
+                </span>
+        `;
+        Object.keys(tSections).forEach(key => {
+            const cleanName = getSectionCleanName(key);
+            navHtml += `
+                <button type="button" class="browse-nav-link" onclick="scrollToBrowseSection('browse-t-${key}')">
+                    <span>${cleanName}</span>
+                    <span class="badge-count">${tSections[key].length}</span>
+                </button>
+            `;
+        });
+        navHtml += `</div>`;
+    }
+
+    if (totalT > 0 && totalCT > 0) {
+        navHtml += `<div class="browse-nav-divider"></div>`;
+    }
+
+    // CT Nav Group
+    if (totalCT > 0) {
+        navHtml += `
+            <div class="browse-nav-side-group">
+                <span class="browse-nav-side-tag ct-tag">
+                    <img src="./assets/icons/ct.png" alt="CT"> CT
+                </span>
+        `;
+        Object.keys(ctSections).forEach(key => {
+            const cleanName = getSectionCleanName(key);
+            navHtml += `
+                <button type="button" class="browse-nav-link" onclick="scrollToBrowseSection('browse-ct-${key}')">
+                    <span>${cleanName}</span>
+                    <span class="badge-count">${ctSections[key].length}</span>
+                </button>
+            `;
+        });
+        navHtml += `</div>`;
+    }
+
+    navBar.innerHTML = navHtml;
+    browseView.appendChild(navBar);
+
+    // Section 1: T-Side
+    if (totalT > 0) {
+        const tSectionEl = document.createElement('section');
+        tSectionEl.className = 'browse-side-section';
+        tSectionEl.id = 'browse-side-t';
+
+        tSectionEl.innerHTML = `
+            <div class="browse-side-header t-side">
+                <img src="./assets/icons/t.png" alt="Terroryści" class="browse-side-logo">
+                <h2 class="browse-side-title">Strona Terrorystów (T)</h2>
+                <span class="browse-side-count">${totalT} lineup${getPolishPlural(totalT, 'ów', 'y', '')}</span>
+            </div>
+        `;
+
+        Object.keys(tSections).forEach(key => {
+            const siteGroup = createBrowseSiteGroup('t', key, tSections[key]);
+            tSectionEl.appendChild(siteGroup);
+        });
+
+        browseView.appendChild(tSectionEl);
+    }
+
+    // Section 2: CT-Side
+    if (totalCT > 0) {
+        const ctSectionEl = document.createElement('section');
+        ctSectionEl.className = 'browse-side-section';
+        ctSectionEl.id = 'browse-side-ct';
+
+        ctSectionEl.innerHTML = `
+            <div class="browse-side-header ct-side">
+                <img src="./assets/icons/ct.png" alt="Antyterroryści" class="browse-side-logo">
+                <h2 class="browse-side-title">Strona Antyterrorystów (CT)</h2>
+                <span class="browse-side-count">${totalCT} lineup${getPolishPlural(totalCT, 'ów', 'y', '')}</span>
+            </div>
+        `;
+
+        Object.keys(ctSections).forEach(key => {
+            const siteGroup = createBrowseSiteGroup('ct', key, ctSections[key]);
+            ctSectionEl.appendChild(siteGroup);
+        });
+
+        browseView.appendChild(ctSectionEl);
+    }
+}
+
+function scrollToBrowseSection(targetId) {
+    const target = document.getElementById(targetId);
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+/* ==========================================================================
+   Lightbox Modal
+   ========================================================================== */
 function initLightbox() {
     const modal = document.createElement('div');
     modal.id = 'lightbox-modal';
@@ -422,6 +895,14 @@ function initLightbox() {
             modal.classList.remove('active');
         }
     });
+
+    // Delegated click handler for any zoomable-img on the page
+    document.addEventListener('click', (e) => {
+        if (e.target && e.target.classList.contains('zoomable-img')) {
+            e.stopPropagation();
+            openLightbox(e.target.src, e.target.alt);
+        }
+    });
 }
 
 function openLightbox(src, alt) {
@@ -433,3 +914,7 @@ function openLightbox(src, alt) {
         modal.classList.add('active');
     }
 }
+
+// Global exposes for inline handlers
+window.switchSide = switchSide;
+window.scrollToBrowseSection = scrollToBrowseSection;

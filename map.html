@@ -11,29 +11,53 @@
         <div class="header-content">
             <a href="./index.html" class="nav-back">← Wszystkie mapy</a>
             <h1 class="brand-title" id="header-map-title">CS2 Lineups</h1>
-            <div style="width: 140px;"></div> <!-- Spacer for center alignment -->
+            <div class="view-toggle-wrapper">
+                <div class="view-toggle" id="view-toggle" role="group" aria-label="Wybór trybu wyświetlania">
+                    <button type="button" class="view-toggle-btn active" data-mode="standard" id="btn-mode-standard" title="Tryb standardowy (karty z zakładkami)">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                        </svg>
+                        <span class="toggle-text">Kafelki</span>
+                    </button>
+                    <button type="button" class="view-toggle-btn" data-mode="browse" id="btn-mode-browse" title="Tryb przeglądania (rozłożone w jednym ciągu)">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"></path>
+                        </svg>
+                        <span class="toggle-text">Przeglądanie</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Side Selector (T / CT) -->
-        <div class="side-selector" id="side-selector">
-            <button class="side-btn t-btn active" data-side="t" id="btn-t-side">
-                <img src="./assets/icons/t.png" alt="Terrorists" class="side-logo">
-                <span class="side-name">Terroryści (T)</span>
-                <span class="side-count" id="t-count">0</span>
-            </button>
-            <button class="side-btn ct-btn" data-side="ct" id="btn-ct-side">
-                <img src="./assets/icons/ct.png" alt="Counter-Terrorists" class="side-logo">
-                <span class="side-name">Antyterroryści (CT)</span>
-                <span class="side-count" id="ct-count">0</span>
-            </button>
+    <main>
+        <!-- Standard View (Tabs + Cards) -->
+        <div id="standard-view">
+            <!-- Side Selector (T / CT) -->
+            <div class="side-selector" id="side-selector">
+                <button class="side-btn t-btn active" data-side="t" id="btn-t-side">
+                    <img src="./assets/icons/t.png" alt="Terrorists" class="side-logo">
+                    <span class="side-name">Terroryści (T)</span>
+                    <span class="side-count" id="t-count">0</span>
+                </button>
+                <button class="side-btn ct-btn" data-side="ct" id="btn-ct-side">
+                    <img src="./assets/icons/ct.png" alt="Counter-Terrorists" class="side-logo">
+                    <span class="side-name">Antyterroryści (CT)</span>
+                    <span class="side-count" id="ct-count">0</span>
+                </button>
+            </div>
+
+            <div>
+                <nav class="tab-buttons" id="tab-buttons" aria-label="Wybór bombsite'u"></nav>
+                <div id="tabs-container"></div>
+            </div>
         </div>
 
-        <div id="map-content">
-            <nav class="tab-buttons" id="tab-buttons" aria-label="Wybór bombsite'u"></nav>
-            <div id="tabs-container"></div>
-        </div>
+        <!-- Browse View (All lineups laid out continuously like in the picture) -->
+        <div id="browse-view" class="browse-view" style="display: none;"></div>
     </main>
 
     <script src="./assets/js/map.js"></script>
