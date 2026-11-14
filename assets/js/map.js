@@ -877,41 +877,204 @@ function scrollToBrowseSection(targetId) {
 }
 
 /* ==========================================================================
-   Lightbox Modal
+   Lightbox Modal with Lineup-Scoped Navigation
    ========================================================================== */
+let currentLightboxGroup = [];
+let currentLightboxIndex = 0;
+
 function initLightbox() {
     const modal = document.createElement('div');
     modal.id = 'lightbox-modal';
     modal.className = 'lightbox-modal';
-    modal.innerHTML = '<img class="lightbox-img" id="lightbox-img" src="" alt="Zoom">';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Podgląd zdjęcia');
+
+    modal.innerHTML = `
+        <button type="button" class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Zamknij podgląd" title="Zamknij (Esc)">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <button type="button" class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Poprzednie zdjęcie" title="Poprzednie (←)">
+            <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2.5" fill="none">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button type="button" class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Następne zdjęcie" title="Następne (→)">
+            <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2.5" fill="none">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="lightbox-content" id="lightbox-content">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="Zoom">
+            <div class="lightbox-footer">
+                <span class="lightbox-caption" id="lightbox-caption"></span>
+                <span class="lightbox-counter" id="lightbox-counter"></span>
+            </div>
+        </div>
+    `;
     document.body.appendChild(modal);
 
-    modal.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const content = document.getElementById('lightbox-content');
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            modal.classList.remove('active');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateLightbox(-1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateLightbox(1);
+        });
+    }
+
+    if (content) {
+        content.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeLightbox();
         }
     });
 
-    // Delegated click handler for any zoomable-img on the page
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            navigateLightbox(-1);
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            navigateLightbox(1);
+        }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    modal.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        if (e.changedTouches.length === 1 && currentLightboxGroup.length > 1) {
+            const diffX = e.changedTouches[0].clientX - touchStartX;
+            const diffY = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 0) {
+                    navigateLightbox(-1);
+                } else {
+                    navigateLightbox(1);
+                }
+            }
+        }
+    }, { passive: true });
+
+    // Delegated click handler: scopes navigation strictly to THAT lineup
     document.addEventListener('click', (e) => {
-        if (e.target && e.target.classList.contains('zoomable-img')) {
+        const target = e.target;
+        if (target && target.classList.contains('zoomable-img')) {
             e.stopPropagation();
-            openLightbox(e.target.src, e.target.alt);
+
+            const container = target.closest('.browse-row')
+                || target.closest('.instant-spawn-row')
+                || target.closest('.lineup-card')
+                || target.parentElement;
+
+            const group = container ? Array.from(container.querySelectorAll('.zoomable-img')) : [target];
+            const idx = group.indexOf(target);
+
+            openLightbox(group, idx >= 0 ? idx : 0);
         }
     });
 }
 
-function openLightbox(src, alt) {
+function openLightbox(group, index) {
     const modal = document.getElementById('lightbox-modal');
-    const img = document.getElementById('lightbox-img');
-    if (modal && img) {
-        img.src = src;
-        img.alt = alt || 'Preview';
-        modal.classList.add('active');
+    if (!modal) return;
+
+    currentLightboxGroup = Array.isArray(group) ? group : [];
+    currentLightboxIndex = index >= 0 && index < currentLightboxGroup.length ? index : 0;
+
+    updateLightboxContent();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction) {
+    if (!currentLightboxGroup || currentLightboxGroup.length <= 1) return;
+    const nextIndex = currentLightboxIndex + direction;
+    if (nextIndex < 0 || nextIndex >= currentLightboxGroup.length) return;
+    currentLightboxIndex = nextIndex;
+    updateLightboxContent();
+}
+
+function updateLightboxContent() {
+    if (!currentLightboxGroup || currentLightboxGroup.length === 0) return;
+    const currentImg = currentLightboxGroup[currentLightboxIndex];
+    if (!currentImg) return;
+
+    const modalImg = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('lightbox-caption');
+    const counterEl = document.getElementById('lightbox-counter');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    if (modalImg) {
+        modalImg.src = currentImg.src;
+        modalImg.alt = currentImg.alt || 'Zoom';
+    }
+
+    if (captionEl) {
+        captionEl.textContent = currentImg.alt || '';
+    }
+
+    if (counterEl) {
+        counterEl.textContent = `${currentLightboxIndex + 1} / ${currentLightboxGroup.length}`;
+        counterEl.style.display = currentLightboxGroup.length > 1 ? 'inline-block' : 'none';
+    }
+
+    if (prevBtn && nextBtn) {
+        const showNav = currentLightboxGroup.length > 1;
+        prevBtn.style.display = showNav ? 'flex' : 'none';
+        nextBtn.style.display = showNav ? 'flex' : 'none';
+
+        if (showNav) {
+            prevBtn.disabled = currentLightboxIndex === 0;
+            nextBtn.disabled = currentLightboxIndex === currentLightboxGroup.length - 1;
+        }
     }
 }
 
