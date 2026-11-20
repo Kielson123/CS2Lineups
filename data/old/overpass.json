@@ -1,0 +1,24 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/overpass/.webp",
+      "images": [
+        "./assets/images/lineups/overpass/.webp",
+        "./assets/images/lineups/overpass/.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ],
+  "Mid": [
+    
+  ],
+  "Bombsite-B": [
+    
+  ]
+}

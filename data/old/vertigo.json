@@ -1,0 +1,24 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/vertigo/.webp",
+      "images": [
+        "./assets/images/lineups/vertigo/.webp",
+        "./assets/images/lineups/vertigo/.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ],
+  "Mid": [
+    
+  ],
+  "Bombsite-B": [
+    
+  ]
+}

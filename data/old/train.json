@@ -1,0 +1,21 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/train/.webp",
+      "images": [
+        "./assets/images/lineups/train/.webp",
+        "./assets/images/lineups/train/.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ],
+  "Bombsite-B": [
+    
+  ]
+}
