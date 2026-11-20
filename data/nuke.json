@@ -1,6 +1,60 @@
 {
   "Bombsite-A": [
-    
+    {
+      "title": "Vent",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/nuke/s_vent_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/t_spawn_3.webp",
+        "./assets/images/lineups/nuke/s_vent_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Kurnik",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/nuke/m_kurnik_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/dach_1_0.webp",
+        "./assets/images/lineups/nuke/dach_1_1.webp",
+        "./assets/images/lineups/nuke/m_kurnik_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Drzwi",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/nuke/m_drzwi_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/heaven_2.webp",
+        "./assets/images/lineups/nuke/m_drzwi_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "A Site",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/nuke/f_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/heaven_1.webp",
+        "./assets/images/lineups/nuke/f_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    }
   ],
   "Outside": [
     {
@@ -42,9 +96,120 @@
         "action": "run"
       },
       "side": "t"
+    },
+    {
+      "title": "Garaż",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/nuke/s_garaz_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/t_spawn_3.webp",
+        "./assets/images/lineups/nuke/s_garaz_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Main",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/nuke/s_main_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/t_spawn_1.webp",
+        "./assets/images/lineups/nuke/s_main_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Main",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/nuke/f_main_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/outside_1.webp",
+        "./assets/images/lineups/nuke/f_main_1.webp"
+      ],
+      "throw": {
+        "mouse": "right-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Outside",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/nuke/m_outside_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/ct_1.webp",
+        "./assets/images/lineups/nuke/m_outside_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "ct"
     }
   ],
   "Rampa / Bombsite-B": [
-    
+    {
+      "title": "Rampa",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/nuke/s_rampa_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/rampa_2.webp",
+        "./assets/images/lineups/nuke/s_rampa_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "keys": [
+          "W"
+        ]
+      },
+      "side": "t"
+    },
+    {
+      "title": "Wnęka",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/nuke/m_wneka_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/rampa_1.webp",
+        "./assets/images/lineups/nuke/m_wneka_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ciemnia",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/nuke/m_ciemnia_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/rampa_3.webp",
+        "./assets/images/lineups/nuke/m_ciemnia_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "ct"
+    },
+    {
+      "title": "Vent",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/nuke/f_vent_0.webp",
+      "images": [
+        "./assets/images/lineups/nuke/asite_1.webp",
+        "./assets/images/lineups/nuke/f_vent_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct"
+    }
   ]
 }
