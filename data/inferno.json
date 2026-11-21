@@ -1,9 +1,158 @@
 {
   "Bombsite-A": [
-    
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_ct_2.webp",
+      "images": [
+        "./assets/images/lineups/inferno/drugi_mid_2.webp",
+        "./assets/images/lineups/inferno/s_ct_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Biblia",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_biblia_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/drugi_mid_2.webp",
+        "./assets/images/lineups/inferno/s_biblia_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Moto",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_moto_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/drugi_mid_2.webp",
+        "./assets/images/lineups/inferno/s_moto_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ciężarówka / Short",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_ciezarowka_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/drugi_mid_2.webp",
+        "./assets/images/lineups/inferno/s_ciezarowka_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "crouch"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Balkon",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_balkon_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/apsy_1.webp",
+        "./assets/images/lineups/inferno/s_balkon_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    }
   ],
   "Mid": [
-    
+    {
+      "title": "Mid",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/t_spawn_1.webp",
+        "./assets/images/lineups/inferno/s_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Apsy",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_aps_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/drugi_mid_1.webp",
+        "./assets/images/lineups/inferno/m_aps_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "runjump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Instant Mid",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_instant_mid_0.webp",
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "ct",
+      "spawns": [
+        {
+          "title": "Spawn #1",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_1.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_2.webp"
+          ]
+        },
+        {
+          "title": "Spawn #2",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_3.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_4.webp"
+          ]
+        },
+        {
+          "title": "Spawn #3",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_5.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_6.webp"
+          ]
+        },
+        {
+          "title": "Spawn #4",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_7.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_8.webp"
+          ]
+        },
+        {
+          "title": "Spawn #5",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_9.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_10.webp"
+          ]
+        },
+        {
+          "title": "Spawn #6",
+          "images": [
+            "./assets/images/lineups/inferno/s_instant_mid_11.webp",
+            "./assets/images/lineups/inferno/s_instant_mid_12.webp"
+          ]
+        }
+      ]
+    }
   ],
   "Bombsite-B": [
     {

@@ -488,6 +488,7 @@ function renderThrowInstructions(lineup) {
 
         let actionText = '';
         if (lineup.throw.action === 'jump') actionText = 'Skok';
+        else if (lineup.throw.action === 'crouch') actionText = 'Kucając';
         else if (lineup.throw.action === 'run') actionText = 'W biegu';
         else if (lineup.throw.action === 'runjump') actionText = 'Skok w biegu';
         else if (lineup.throw.action === 'crouchjump') actionText = 'Skok kucając';
@@ -531,6 +532,8 @@ function toggleExpandCard(card) {
    ========================================================================== */
 const STANDARD_ACTIONS = new Set([
     'jump',
+    'crouch',
+    'kucając',
     'run',
     'runjump',
     'crouchjump',
@@ -573,6 +576,7 @@ function renderCompactThrowBadges(throwObj) {
         const a = String(throwObj.action).toLowerCase();
         let actionText = throwObj.action;
         if (a === 'jump' || a === 'skok') actionText = 'Skok';
+        else if (a === 'kucając' || a==="crouch") actionText = 'Kucając';
         else if (a === 'run' || a === 'bieg') actionText = 'Bieg';
         else if (a === 'skok w biegu' || a==="runjump") actionText = 'Skok w biegu';
         else if (a === 'skok kucając' || a==="crouchjump") actionText = 'Skok kucając';
