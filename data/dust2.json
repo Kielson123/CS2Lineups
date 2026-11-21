@@ -69,7 +69,7 @@
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "Skok w biegu"
+        "action": "runjump"
       },
       "side": "t"
     },

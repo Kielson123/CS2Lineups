@@ -65,7 +65,7 @@
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "Skok w biegu"
+        "action": "runjump"
       },
       "side": "ct"
     }
@@ -417,7 +417,7 @@
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "Skok w biegu"
+        "action": "runjump"
       },
       "side": "ct"
     },
@@ -435,7 +435,7 @@
         "keys": [
           "A"
         ],
-        "action": "Skok w biegu"
+        "action": "runjump"
       },
       "side": "ct"
     },
@@ -449,7 +449,7 @@
       ],
       "throw": {
         "mouse": "both-click",
-        "action": "Skok w biegu"
+        "action": "runjump"
       },
       "side": "ct"
     }

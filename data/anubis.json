@@ -136,7 +136,7 @@
       ],
       "throw": {
         "mouse": "left-click",
-        "action": "Skok Kucając",
+        "action": "crouchjump",
         "keys": [
           "W"
         ]

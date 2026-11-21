@@ -1,0 +1,169 @@
+{
+  "Bombsite-A": [
+    
+  ],
+  "Mid": [
+    
+  ],
+  "Bombsite-B": [
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_1.webp",
+        "./assets/images/lineups/inferno/s_ct_1.webp"
+      ],
+      "throw": {
+        "mouse": "both-click",
+        "action": "jump",
+        "keys": [
+          "W"
+        ]
+      },
+      "side": "t"
+    },
+    {
+      "title": "Trumny",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/inferno/s_trumny_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_1.webp",
+        "./assets/images/lineups/inferno/s_trumny_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump",
+        "keys": [
+          "W"
+        ]
+      },
+      "side": "t"
+    },
+    {
+      "title": "Car",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_car_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_2.webp",
+        "./assets/images/lineups/inferno/m_car_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Jedynki i Dwójki",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_1i2_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_3.webp",
+        "./assets/images/lineups/inferno/m_1i2_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Czwórki",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_czworki_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_3.webp",
+        "./assets/images/lineups/inferno/m_czworki_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ciemnia",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_ciemnia_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_4.webp",
+        "./assets/images/lineups/inferno/m_ciemnia_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "crouchjump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Trumny",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/inferno/m_trumny_0.webp",
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t",
+      "spawns": [
+        {
+          "title": "Sposób #1",
+          "images": [
+            "./assets/images/lineups/inferno/banan_4.webp",
+            "./assets/images/lineups/inferno/m_trumny_1.webp"
+          ]
+        },
+        {
+          "title": "Sposób #2",
+          "images": [
+            "./assets/images/lineups/inferno/banan_5.webp",
+            "./assets/images/lineups/inferno/m_trumny_2.webp"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CT",
+      "grenade": "he",
+      "preview": "./assets/images/lineups/inferno/h_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_5.webp",
+        "./assets/images/lineups/inferno/h_ct_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Jedynki i Dwójki",
+      "grenade": "he",
+      "preview": "./assets/images/lineups/inferno/h_1i2_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_3.webp",
+        "./assets/images/lineups/inferno/h_1i2_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "B Site",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/inferno/f_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/inferno/banan_6.webp",
+        "./assets/images/lineups/inferno/f_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump",
+        "keys": [
+          "W"
+        ]
+      },
+      "side": "t"
+    }
+  ]
+}
