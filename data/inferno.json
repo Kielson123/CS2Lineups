@@ -117,10 +117,6 @@
       "title": "Instant Mid",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/inferno/s_instant_mid_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "action": "jump"
-      },
       "side": "ct",
       "spawns": [
         {
@@ -128,42 +124,66 @@
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_1.webp",
             "./assets/images/lineups/inferno/s_instant_mid_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #2",
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_3.webp",
             "./assets/images/lineups/inferno/s_instant_mid_4.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #3",
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_5.webp",
             "./assets/images/lineups/inferno/s_instant_mid_6.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #4",
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_7.webp",
             "./assets/images/lineups/inferno/s_instant_mid_8.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #5",
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_9.webp",
             "./assets/images/lineups/inferno/s_instant_mid_10.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #6",
           "images": [
             "./assets/images/lineups/inferno/s_instant_mid_11.webp",
             "./assets/images/lineups/inferno/s_instant_mid_12.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         }
       ]
     }
@@ -262,10 +282,6 @@
       "title": "Trumny",
       "grenade": "molotov",
       "preview": "./assets/images/lineups/inferno/m_trumny_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "action": "jump"
-      },
       "side": "t",
       "spawns": [
         {
@@ -273,14 +289,22 @@
           "images": [
             "./assets/images/lineups/inferno/banan_4.webp",
             "./assets/images/lineups/inferno/m_trumny_1.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Sposób #2",
           "images": [
             "./assets/images/lineups/inferno/banan_5.webp",
             "./assets/images/lineups/inferno/m_trumny_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         }
       ]
     },

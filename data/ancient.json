@@ -75,10 +75,6 @@
       "title": "Red Room",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/ancient/s_red_room_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "action": "jump"
-      },
       "side": "t",
       "spawns": [
         {
@@ -86,14 +82,22 @@
           "images": [
             "./assets/images/lineups/ancient/t_spawn_2.webp",
             "./assets/images/lineups/ancient/s_red_room_1.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Sposób #2",
           "images": [
             "./assets/images/lineups/ancient/t_spawn_3.webp",
             "./assets/images/lineups/ancient/s_red_room_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         }
       ]
     },
@@ -101,13 +105,6 @@
       "title": "Instant Red Room",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/ancient/s_instant_red_room_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "keys": [
-          "W"
-        ],
-        "action": "jump"
-      },
       "side": "t",
       "spawns": [
         {
@@ -115,7 +112,14 @@
           "images": [
             "./assets/images/lineups/ancient/s_instant_red_room_1.webp",
             "./assets/images/lineups/ancient/s_instant_red_room_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #2",
@@ -125,7 +129,12 @@
             "./assets/images/lineups/ancient/s_instant_red_room_4_2.webp"
           ],
           "throw": {
-            "action": "po kroku #2 iść w lewo, aż krok #3"
+            "mouse": "left-click",
+            "info": "po kroku #2 iść w lewo, aż krok #3",
+            "keys": [
+              "W"
+            ],
+            "action": "jump"
           }
         },
         {
@@ -136,7 +145,12 @@
             "./assets/images/lineups/ancient/s_instant_red_room_6_2.webp"
           ],
           "throw": {
-            "action": "po kroku #2 iść w prawo, aż krok #3"
+            "mouse": "left-click",
+            "info": "po kroku #2 iść w lewo, aż krok #3",
+            "keys": [
+              "W"
+            ],
+            "action": "jump"
           }
         },
         {
@@ -144,14 +158,28 @@
           "images": [
             "./assets/images/lineups/ancient/s_instant_red_room_7.webp",
             "./assets/images/lineups/ancient/s_instant_red_room_8.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #5",
           "images": [
             "./assets/images/lineups/ancient/s_instant_red_room_9.webp",
             "./assets/images/lineups/ancient/s_instant_red_room_10.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "W"
+            ],
+            "action": "jump"
+          }
         }
       ]
     },
@@ -215,14 +243,6 @@
       "title": "Instant Zakręt",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/ancient/s_instant_zakret_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "keys": [
-          "Shift",
-          "W"
-        ],
-        "action": "jump"
-      },
       "side": "ct",
       "spawns": [
         {
@@ -230,35 +250,75 @@
           "images": [
             "./assets/images/lineups/ancient/s_instant_zakret_1.webp",
             "./assets/images/lineups/ancient/s_instant_zakret_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "Shift",
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #2",
           "images": [
             "./assets/images/lineups/ancient/s_instant_zakret_3.webp",
             "./assets/images/lineups/ancient/s_instant_zakret_4.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "Shift",
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #3",
           "images": [
             "./assets/images/lineups/ancient/s_instant_zakret_5.webp",
             "./assets/images/lineups/ancient/s_instant_zakret_6.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "Shift",
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #4",
           "images": [
             "./assets/images/lineups/ancient/s_instant_zakret_7.webp",
             "./assets/images/lineups/ancient/s_instant_zakret_8.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "Shift",
+              "W"
+            ],
+            "action": "jump"
+          }
         },
         {
           "title": "Spawn #5",
           "images": [
             "./assets/images/lineups/ancient/s_instant_zakret_9.webp",
             "./assets/images/lineups/ancient/s_instant_zakret_10.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "keys": [
+              "Shift",
+              "W"
+            ],
+            "action": "jump"
+          }
         }
       ]
     },

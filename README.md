@@ -68,6 +68,7 @@ W głównym katalogu projektu znajduje się narzędzie `optimize-images.exe`:
   ],
   "throw": {
     "mouse": "left-click",
+    "info": "opcjonalna dodatkowa instrukcja",
     "keys": ["W"],
     "action": "jump"
   }
@@ -77,5 +78,6 @@ W głównym katalogu projektu znajduje się narzędzie `optimize-images.exe`:
 * `side`: strona (`"t"`, `"ct"`, lub `"both"`) — przypisuje lineup do filtru Terrorystów / Antyterrorystów oraz dodaje plakietkę na karcie.
 * `grenade`: typ granatu (`smoke`, `flash`, `molotov`, `he`) — określa kolor obramowania karty.
 * `throw.mouse`: nazwa ikony z `assets/icons/` (np. `left-click`, `right-click`, `both-click`).
+* `throw.info`: opcjonalne dodatkowe instrukcje rzutu lub poruszania się (wyświetlane po przycisku myszy, a przed klawiszami i typem rzutu).
 * `throw.keys`: opcjonalna tablica klawiszy (np. `["W"]`, `["Shift"]`).
 * `throw.action`: typ rzutu (`jump` -> Skok, `run` -> W biegu, `stand` -> W miejscu).

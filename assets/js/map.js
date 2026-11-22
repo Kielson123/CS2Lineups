@@ -455,7 +455,7 @@ function createLineupCard(lineup) {
 }
 
 function renderThrowInstructions(lineup) {
-    if (lineup.throw) {
+    if (lineup && lineup.throw) {
         let mouseIcon = '';
         if (lineup.throw.mouse) {
             const m = String(lineup.throw.mouse).toLowerCase();
@@ -482,7 +482,11 @@ function renderThrowInstructions(lineup) {
             mouseIcon = `<span class="mouse-badge"><img src="./assets/icons/${icon}.png" class="mouse-icon" alt="${label}"> ${label}</span>`;
         }
 
-        const keysHtml = Array.isArray(lineup.throw.keys)
+        const infoBadge = lineup.throw.info
+            ? `<span class="info-badge">${lineup.throw.info}</span>`
+            : '';
+
+        const keysHtml = Array.isArray(lineup.throw.keys) && lineup.throw.keys.length > 0
             ? lineup.throw.keys.map(k => `<kbd>${k}</kbd>`).join(' ')
             : '';
 
@@ -496,13 +500,24 @@ function renderThrowInstructions(lineup) {
 
         const actionBadge = actionText ? `<span class="action-badge">${actionText}</span>` : '';
 
-        return `
-            <div class="throw-instructions">
-                ${mouseIcon}
-                ${keysHtml ? `<span class="instruction-divider">+</span> ${keysHtml}` : ''}
-                ${actionBadge ? `<span class="instruction-divider">+</span> ${actionBadge}` : ''}
-            </div>
-        `;
+        const parts = [];
+        if (mouseIcon) parts.push(mouseIcon);
+        if (infoBadge) parts.push(infoBadge);
+        if (keysHtml) parts.push(keysHtml);
+        if (actionBadge) parts.push(actionBadge);
+
+        if (parts.length > 0) {
+            const content = parts.map((part, idx) => {
+                if (idx === 0) return `<span class="throw-step">${part}</span>`;
+                return `<span class="throw-step"><span class="instruction-divider">+</span>${part}</span>`;
+            }).join('');
+
+            return `
+                <div class="throw-instructions">
+                    ${content}
+                </div>
+            `;
+        }
     }
 
     return '';
@@ -589,7 +604,10 @@ function renderCompactThrowBadges(throwObj) {
     if (actionHtml) parts.push(actionHtml);
 
     if (parts.length > 0) {
-        return parts.join('<span class="instruction-divider">+</span>');
+        return parts.map((part, idx) => {
+            if (idx === 0) return `<span class="throw-step">${part}</span>`;
+            return `<span class="throw-step"><span class="instruction-divider">+</span>${part}</span>`;
+        }).join('');
     }
 
     return '';
@@ -620,7 +638,8 @@ function createBrowseRowElement(item) {
         `;
     }).join('');
 
-    const noteHtml = item.note ? `<div class="browse-info-note-cell">${item.note}</div>` : '';
+    const noteText = item.info || item.note || (item.throwObj && item.throwObj.info) || '';
+    const noteHtml = noteText ? `<div class="browse-info-note-cell">${noteText}</div>` : '';
 
     row.innerHTML = `
         <div class="browse-info-col">
@@ -673,12 +692,13 @@ function createBrowseSiteGroup(side, sectionKey, lineups) {
                 const spawnThrow = spawn.throw || {};
                 let note = null;
                 let actionToUse = null;
+                let infoToUse = spawnThrow.info || baseThrow.info || null;
 
                 if (spawnThrow.action) {
                     if (isStandardAction(spawnThrow.action)) {
                         actionToUse = spawnThrow.action;
                     } else {
-                        note = spawnThrow.action;
+                        if (!infoToUse) infoToUse = spawnThrow.action;
                         actionToUse = baseThrow.action || 'jump';
                     }
                 } else {
@@ -687,6 +707,7 @@ function createBrowseSiteGroup(side, sectionKey, lineups) {
 
                 const effectiveThrow = {
                     mouse: spawnThrow.mouse || baseThrow.mouse || 'left-click',
+                    info: infoToUse,
                     keys: spawnThrow.keys || baseThrow.keys || [],
                     action: actionToUse
                 };
@@ -695,6 +716,7 @@ function createBrowseSiteGroup(side, sectionKey, lineups) {
                     title: fullTitle,
                     grenade: lineup.grenade,
                     throwObj: effectiveThrow,
+                    info: infoToUse,
                     note: note,
                     images: allImages
                 });
@@ -707,16 +729,19 @@ function createBrowseSiteGroup(side, sectionKey, lineups) {
             if (lineup.preview) allImages.push(lineup.preview);
 
             let note = null;
-            let effectiveThrow = lineup.throw || null;
+            let effectiveThrow = lineup.throw ? { ...lineup.throw } : null;
             if (effectiveThrow && effectiveThrow.action && !isStandardAction(effectiveThrow.action)) {
-                note = effectiveThrow.action;
-                effectiveThrow = { ...effectiveThrow, action: null };
+                if (!effectiveThrow.info) {
+                    effectiveThrow.info = effectiveThrow.action;
+                }
+                effectiveThrow.action = null;
             }
 
             const rowEl = createBrowseRowElement({
                 title: lineup.title,
                 grenade: lineup.grenade,
                 throwObj: effectiveThrow,
+                info: effectiveThrow ? effectiveThrow.info : null,
                 note: note,
                 images: allImages
             });

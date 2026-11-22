@@ -1,0 +1,287 @@
+{
+  "Bombsite-A": [
+    {
+      "title": "Schody",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_schody_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/rampa_1.webp",
+        "./assets/images/lineups/mirage/s_schody_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Jungla",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_jungla_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/rampa_1.webp",
+        "./assets/images/lineups/mirage/s_jungla_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "CT",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_ct_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/rampa_1.webp",
+        "./assets/images/lineups/mirage/s_ct_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Pod dechą",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/mirage/m_deska_0.webp",
+      "side": "t",
+      "spawns": [
+        {
+          "title": "Sposób #1",
+          "images": [
+            "./assets/images/lineups/mirage/palac_1.webp",
+            "./assets/images/lineups/mirage/m_deska_1.webp"
+          ],
+          "throw": {
+            "mouse": "left-click"
+          }
+        },
+        {
+          "title": "Sposób #2",
+          "images": [
+            "./assets/images/lineups/mirage/rampa_2.webp",
+            "./assets/images/lineups/mirage/m_deska_2.webp"
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "run"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Schody",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/mirage/m_schody_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/rampa_3.webp",
+        "./assets/images/lineups/mirage/m_schody_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "crouch"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site A",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/mirage/f_a_site_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/rampa_1.webp",
+        "./assets/images/lineups/mirage/f_a_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    }
+  ],
+  "Mid": [
+    {
+      "title": "Okno",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_okno_0.webp",
+      "side": "t",
+      "spawns": [
+        {
+          "title": "Sposób #1",
+          "images": [
+            "./assets/images/lineups/mirage/t_spawn_1.webp",
+            "./assets/images/lineups/mirage/s_okno_1.webp"
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
+        },
+        {
+          "title": "Sposób #2",
+          "images": [
+            "./assets/images/lineups/mirage/mid_1.webp",
+            "./assets/images/lineups/mirage/s_okno_2.webp"
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "crouch"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Connector",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_con_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/t_spawn_1.webp",
+        "./assets/images/lineups/mirage/s_con_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "crouchjump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Short",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_short_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/t_spawn_1.webp",
+        "./assets/images/lineups/mirage/s_short_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Mid",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_mid_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/t_spawn_1.webp",
+        "./assets/images/lineups/mirage/s_mid_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Connector",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_con_2.webp",
+      "images": [
+        "./assets/images/lineups/mirage/mid_1.webp",
+        "./assets/images/lineups/mirage/s_con_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ladder",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/mirage/m_ladder_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/mid_2.webp",
+        "./assets/images/lineups/mirage/m_ladder_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "runjump"
+      },
+      "side": "t"
+    }
+  ],
+  "Bombsite-B": [
+    {
+      "title": "Kuchnia",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_kuchnia_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_1.webp",
+        "./assets/images/lineups/mirage/s_kuchnia_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Edward",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_edward_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_1.webp",
+        "./assets/images/lineups/mirage/s_edward_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "smoke",
+      "preview": "./assets/images/lineups/mirage/s_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_2.webp",
+        "./assets/images/lineups/mirage/s_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "crouch"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Ławka",
+      "grenade": "molotov",
+      "preview": "./assets/images/lineups/mirage/m_lawka_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_3.webp",
+        "./assets/images/lineups/mirage/m_lawka_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "run"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/mirage/f_b_site_0.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_4.webp",
+        "./assets/images/lineups/mirage/f_b_site_1.webp"
+      ],
+      "throw": {
+        "mouse": "left-click",
+        "action": "jump"
+      },
+      "side": "t"
+    },
+    {
+      "title": "Site B",
+      "grenade": "flash",
+      "preview": "./assets/images/lineups/mirage/f_b_site_2.webp",
+      "images": [
+        "./assets/images/lineups/mirage/apsy_5.webp",
+        "./assets/images/lineups/mirage/f_b_site_3.webp"
+      ],
+      "throw": {
+        "mouse": "left-click"
+      },
+      "side": "t"
+    }
+  ]
+}

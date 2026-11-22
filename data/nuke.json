@@ -61,10 +61,6 @@
       "title": "Outside (ściana)",
       "grenade": "smoke",
       "preview": "./assets/images/lineups/nuke/s_outside_0.webp",
-      "throw": {
-        "mouse": "left-click",
-        "action": "jump"
-      },
       "side": "t",
       "spawns": [
         {
@@ -72,14 +68,22 @@
           "images": [
             "./assets/images/lineups/nuke/t_spawn_1.webp",
             "./assets/images/lineups/nuke/s_outside_1.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         },
         {
           "title": "Smoke #2",
           "images": [
             "./assets/images/lineups/nuke/t_spawn_1.webp",
             "./assets/images/lineups/nuke/s_outside_2.webp"
-          ]
+          ],
+          "throw": {
+            "mouse": "left-click",
+            "action": "jump"
+          }
         }
       ]
     },
